@@ -1,0 +1,72 @@
+// color test
+.color-test
+	@extends .clearfix
+	h3
+		clear both
+	div
+		border solid 1px #fff
+		width 80px
+		height 50px
+		float left
+		margin 1em 0
+		&.blue
+			background-color blue
+		&.red
+			background-color red
+		&.yellow
+			background-color yellow
+		&.green
+			background-color green
+
+		&.grayDark
+			background-color grayDark
+		&.gray
+			background-color gray
+		&.grayLight
+			background-color grayLight
+
+		&.pureBlack
+			background-color pureBlack
+		&.offBlack
+			background-color offBlack
+		&.pureWhite
+			background-color pureWhite
+		&.offWhite
+			background-color offWhite
+		&.baseColor
+			background-color baseColor
+		&.baseColorDark
+			background-color baseColorDark
+		&.baseColorLight
+			background-color baseColorLight
+		&.baseColorBackground
+			background-color baseColorBackground
+		&.complementColor
+			background-color complementColor
+			width 25px
+		&.complementColorDark
+			background-color complementColorDark
+			width 25px
+		&.complementColorLight
+			background-color complementColorLight
+			width 25px
+		&.complementColorBackground
+			background-color complementColorBackground
+			width 25px
+		&.warning
+			background-color warning
+		&.primary
+			background-color primary
+		&.error
+			background-color error
+		&.success
+			background-color success
+
+.row
+	row()
+
+.span3
+	columns(1.5)
+
+.span12
+	columns(12)

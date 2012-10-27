@@ -1,0 +1,26 @@
+/* Layout Utils
+   ====================================== */
+.clearfix
+	clearfix()
+
+.hide
+.hidden
+	hidden()
+
+.invisible
+	invisible()
+
+.visuallyhidden
+	visuallyhidden()
+
+/* Transition Utils
+   ====================================== */
+.fade
+	opacity 0
+	transition opacity .4s linear .2s
+	&.slow
+		transition opacity .6s linear .3s
+	&.fast
+		transition opacity .2s linear .1s
+	&.in
+		opacity 100

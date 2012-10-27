@@ -1,0 +1,178 @@
+/* Resets
+   ====================================== */
+input[type="image"]
+	border: 0
+	box-shadow(unquote('none')) // Remove shadow from image inputs
+
+input[type="file"]
+	width: auto
+	padding: initial
+	line-height: initial
+	background-color: initial
+	border: initial
+	box-shadow(unquote('none'))
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"]
+	width: auto
+	height: auto
+
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"]
+	width: auto
+	height: auto
+	padding: 0
+	margin: 3px 0
+	*margin-top: 0 /* IE7 */
+	line-height: normal
+	cursor: pointer
+	background-color: transparent
+	border: 0 \9 /* IE9 and down */
+	border-radius 0
+
+select,
+input[type="file"]
+	height: 1.5em /* In IE7, the height of the select element cannot be changed by height, only font-size */
+	line-height: 1.5em
+
+input[type="file"]
+	line-height: 1.4em \9 // Reset line-height for IE
+
+select
+	line-height 1.4em
+	height 2em
+	background-color white
+
+select[multiple],
+select[size]
+	height: auto // Make multiple select elements height not fixed
+
+/* Base appearance
+   ====================================== */
+input,
+textarea,
+select
+	// layout
+	display: inline-block
+	border-radius(2px)
+	padding .42em
+	margin 0.3em .118em
+
+input
+textarea
+	// type
+	font-size 1em
+	font-weight normalWeight
+	font-family inputFontFamily
+	color complementColorLight
+	// appearance
+	border 2px solid complementColorBackground
+
+textarea
+	height auto
+	line-height lineHeight
+	font-size 1.05em
+
+// Some thing we want to revert the changes
+select
+	border-color grayLight
+input[type="file"]
+	color offBlack
+
+/* Focused appearance
+   ====================================== */
+input,
+textarea
+	shadow = rgba(complementColorLight, .75)
+	box-shadow(unquote('inset 0 1px 1px %1'), shadow)
+	transition(unquote('border linear .2s, box-shadow linear .2s'))
+
+input:focus,
+textarea:focus
+	color: complementColor
+	border-color: complementColorLight
+	outline: 0
+	outline: thin dotted \9 /* IE6-9 */
+	box-shadow(unquote('inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(210, 233, 235, .6)'))
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+select:focus
+	outline: thin dotted #333
+	// Webkit
+	outline: unquote('5px auto -webkit-focus-ring-color')
+	outline-offset -2px
+	box-shadow(unquote('none')) // override for file inputs
+
+/* Sizes
+   ====================================== */
+input
+select
+	// Lengths
+	&.input-short
+		width 6em
+	&
+		width 12em
+	&.input-long
+		width 16em
+	// Sizes
+	&.input-small
+		font-size .8em
+	&
+		font-size 1em
+	&.input-large
+		font-size 1.3em
+
+textarea
+	width 94%
+	min-height 4.4em
+
+	@media daddy
+		&.textarea-narrow
+			width 12em
+			padding .3em
+		&
+			width 18em
+			min-height 6.6em
+		&.textarea-wide
+			width 30em
+			min-height 8.8em
+		&.textarea-fullscreen
+			margin 0
+			width 98%
+			padding 1%
+			min-height 14em
+		&.textarea-short
+			min-height 4.4em
+		&.textarea-tall
+			min-height 18em
+
+	@media mummy
+		&.textarea-wide
+			width 18em
+			padding 3%
+
+/*	Other non-traditional inputs
+		====================================== */
+.content-editable
+	position relative
+	&::before
+		display block
+		position absolute
+		z-index -1
+		content ""
+		top -.2em
+		right -.2em
+		left -.2em
+		bottom -.2em
+		opacity 0
+		border 1px dashed complementColorLight
+		transition opacity .5s linear
+	&:hover::before
+	&:focus::before
+		opacity 80
+	&:focus
+		outline none

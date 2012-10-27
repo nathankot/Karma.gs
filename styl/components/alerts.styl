@@ -1,0 +1,33 @@
+_alert_background(color)
+	desaturate(lighten(color, 90%), 60%)
+
+.alert
+	display block
+	padding .2em .2em .2em 1.2em
+	margin-bottom (lineHeight/2)em
+	border-left 6px solid grayLight
+	background _alert_background(grayLight)
+
+.alert-warning
+	border-left-color warning
+	background _alert_background(warning)
+
+.alert-error
+	border-left-color error
+	background _alert_background(error)
+
+.alert-success
+	border-left-color success
+	background _alert_background(success)
+
+.alert-global
+	display block
+
+	color pureWhite
+	border-left 0
+	&.alert-error
+		background error
+	&.alert-warning
+		background warning
+	&.alert-success
+		background success

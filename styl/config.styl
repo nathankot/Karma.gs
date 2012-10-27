@@ -1,0 +1,107 @@
+/* ======================================
+   All variables go here
+   ====================================== */
+
+/*	======================================
+		Grid Settings
+		====================================== */
+/* 	_goldilocks
+		You can decide what your 'goldilocks' is.
+		The default is set according to http://bit.ly/Roy97M
+		Theoretically, it is the optimal paragraph
+		Width for readability
+
+		_goldilocks_padding
+		The 'perfect' amount of padding.
+		It pads the content inside the container
+		And is used as the default padding for
+		Many components
+
+		_grid_columns
+		Self explanatory.
+		Although it doesn't really matter.
+		Cause you can use columns like 2.5 or 1.23 :)
+
+		_gutter_width
+		Self explanatory.
+
+		_grid_expand_min_proportion
+		In the small viewport some columns should
+		Be expanded to 100% width. If the width of
+		The column is calculated to be above {this*100}%,
+		Then it will be expanded to 100%
+	  ====================================== */
+_goldilocks			= 30em
+_goldilocks_padding	= 0.809em
+_grid_columns		= 6
+_gutter_width		= 1.2em
+_grid_expand_min_proportion = .6 // the minimum proportion of full size for a column to width:100% in a small viewport
+
+/* Font
+   ====================================== */
+lineHeight    			= _goldilocks_padding * 2
+
+titleFontFamily			= "Franklin Gothic Medium", Futura, "Century Gothic", AppleGothic, sans-serif
+headingFontFamily		= Helvetica, Arial, sans-serif
+paragraphFontFamily	= "Helvetica Neue", Helvetica, Arial, sans-serif
+inputFontFamily			= "Helvetica Neue", Helvetica, Arial, sans-serif
+monoFontFamily			= monospace
+
+thinWeight					= 100
+normalWeight				= 300
+normalWeightRetina	= 400
+boldWeight					= bold
+heavyWeight					= 900
+
+/* COLORS
+   ====================================== */
+// functions
+_color_dark(color)
+	darken(color, 60%)
+
+_color_light(color)
+	lighten(color, 60%)
+
+_color_background(color)
+	lighten(desaturate(color, 70%), 90%)
+
+// Theme-specific colors
+baseColor                 = #7D7F62 // <---- Set this and the grid will try generate a scheme for you
+baseColorDark             = _color_dark(baseColor)
+baseColorLight            = _color_light(baseColor)
+baseColorBackground       = _color_background(baseColor)
+
+complementColor           = spin(baseColor, 45deg)
+complementColorDark       = _color_dark(complementColor)
+complementColorLight      = _color_light(complementColor)
+complementColorBackground = _color_background(complementColor)
+
+// primary colors
+// These should stand out so choose them yourself
+blue				= #17649A
+red					= #CD1231
+green				= #61AE24
+yellow			= #F0D423
+
+// Descriptive colors
+primary				= baseColor
+error					= red
+warning				= yellow
+success				= green
+
+// blacks and whites
+pureBlack			= #000
+offBlack			= hsla(hue(baseColor), 3%, 25%, 1)
+offWhite			= hsla(hue(baseColor), 0%, 98%, 1)
+pureWhite			= #fff
+
+// grays
+grayDark			= lighten(offBlack, 15%)
+gray					= lighten(grayDark, 15%)
+grayLight			= lighten(gray, 15%)
+
+/* Z-index
+   ====================================== */
+zindexTooltip		= 1000
+zindexToolbar		= 1100
+zindexModal			= 1200

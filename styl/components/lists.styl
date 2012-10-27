@@ -1,0 +1,30 @@
+/*	======================================
+		List styles go here
+		Pretty self-explanatory
+		Definition lists, Unordered lists,
+		Ordered lists, etc
+		====================================== */
+
+dl
+	@extends .clearfix
+	font-size .9em
+
+	dt
+		float left
+		clear left
+		width 50%
+
+		font-weight boldWeight
+		color grayDark
+
+	dd
+		float left
+		clear right
+		width 50%
+
+		text-align right
+		color grayDark
+
+		& + dd
+			margin-left 50%
+			clear left

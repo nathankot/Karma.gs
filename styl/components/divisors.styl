@@ -1,0 +1,54 @@
+divisor_color_default = complementColorBackground
+
+.divisor .arrow
+	position relative
+	overflow visible
+	border none
+	padding 0
+	height 0
+	margin lineHeight 0
+	&.top
+		position absolute
+		top -(lineHeight)
+		left 0
+		right 0
+		&::after
+			display block
+			content ""
+			position absolute
+			arrow-bottom(15px, offWhite)
+	&.bottom
+		position absolute
+		bottom -(lineHeight)
+		left 0
+		right 0
+		&::after
+			display block
+			content ""
+			position absolute
+			arrow-top(15px, offWhite)
+
+.divisor
+	position relative
+	background divisor_color_default
+	overflow visible
+	padding lineHeight 0
+	margin-bottom lineHeight
+	&::before
+		background divisor_color_default
+		display block
+		content	""
+		position absolute
+		top 0
+		bottom 0
+		left -9999px
+		right 100%
+	&::after
+		background divisor_color_default
+		display block
+		content	""
+		position absolute
+		top 0
+		bottom 0
+		left 100%
+		right -9999px

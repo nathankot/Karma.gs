@@ -1,0 +1,92 @@
+/* ======================================
+   Form layout and styling
+   ====================================== */
+
+/*	Core Layout
+	====================================== */
+fieldset
+	.lt-ie8 &
+		position relative // used for ie7 fix
+	display block
+	padding 1.5em
+	margin-bottom lineHeight
+	background-color complementColorBackground
+
+legend
+	color offBlack
+	font-size 1em
+	font-weight normalWeight
+	text-transform lowercase
+	font-variant small-caps
+	background-color inherit
+	padding 0 1em
+	margin-left -1.5em
+	// IE7 Doesnt render legends how they should be, so we will place it manually
+	.lt-ie8 &
+		position absolute
+		top -.5em
+		left 0
+
+form
+	.error
+		font-size .85em
+		color error
+		text-transform lowercase
+		font-variant small-caps
+	label
+	.control-group
+		@extends .clearfix
+		display block
+		margin-bottom (lineHeight/2)em
+		> span
+			display block
+			color gray
+			margin-right .5em
+			.error
+				display inline
+				float right
+		> div
+			display block
+
+.form-actions
+	@extends .clearfix
+	border-top 1px dashed darken(complementColorBackground, 2%)
+	padding .5em
+	margin-bottom lineHeight
+	input
+	.btn
+	a[class*="btn-"]
+		float right
+		margin-left .6em
+
+@media daddyOnly
+	legend
+		margin-left -4em
+	fieldset
+		padding-left 4em
+
+@media daddy
+	.form-horizontal
+		label
+		.control-group
+			@extends .clearfix
+			> span
+				float left
+				padding-top .2em
+				width (_goldilocks/3)
+				min-height 2.5em
+				.error
+					float none
+					display block
+					margin-top -(lineHeight/2)em
+			> div
+				float left
+
+
+
+/*	Grouping inputs
+	====================================== */
+.radio-group
+	font-size .9em
+	margin-right .6em
+	line-height 2.5em

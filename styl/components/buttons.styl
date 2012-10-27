@@ -1,0 +1,56 @@
+_btn_background(colorLight, colorDark = darken(colorLight, 30%))
+	// background
+	background-color lighten(colorLight, 5%)
+	&:hover
+		background-color lighten(colorLight, 30%)
+	&:active
+		background-color darken(colorLight, 40%)
+
+input[type="submit"]
+input[type="reset"]
+input[type="button"]
+button
+.btn
+.btn:visited
+	&	
+		// the initial reset
+		display inline-block
+		ie7-inline-block()
+		ie7-restore-left-whitespace()
+		background none
+		border 0
+		padding 0
+		margin 0
+		cursor pointer
+		width auto
+		height auto
+		
+		// typography
+		font-size 1em
+		line-height 1.4em
+		font-weight normalWeight
+		font-family headingFontFamily
+		color offWhite
+		text-decoration none
+		
+		// layout
+		padding .3em 1em
+		margin .1em 0 1em
+		
+		// appreance
+		border-radius 3px
+		transition none
+	
+	// Colors
+	&
+		_btn_background(gray)
+	&.btn-primary
+		_btn_background(primary)	
+	&.btn-warning
+		_btn_background(error)
+		
+	// Sizes
+	&.btn-small
+		font-size .85em
+	&.btn-large
+		font-size 1.2em

@@ -1,0 +1,73 @@
+/*	======================================
+		This is for FONTS ONLY
+		Put fonts for non-component generic
+		TAGS here
+		====================================== */
+
+/* Global
+	 ====================================== */
+body
+	font-family paragraphFontFamily
+	font-size 1em
+	font-weight normalWeight
+	line-height lineHeight
+	color offBlack
+
+h1,
+h2,
+h3,
+h4
+	font-family headingFontFamily
+	font-weight normalWeight
+	line-height lineHeight
+	color offBlack
+
+for x in 1..4
+	h{x}
+		color lighten(offBlack, (12*x)%)
+
+p,
+ul,
+ol,
+dl,
+blockquote
+	font-size 1em
+	line-height lineHeight
+
+a,
+a:visited
+	color primary
+	text-decoration underline
+
+a:hover
+	text-decoration none
+
+h1
+	font-size 2em
+
+h2
+	font-size 1.6em
+
+h3
+	font-size 1.4em
+
+h4
+	font-size 1.1em
+
+strong
+	font-weight boldWeight
+
+em
+	font-style italic
+
+/*	Retina
+		====================================== */
+@media retina
+	body
+		font-weight normalWeightRetina
+
+	h1
+	h2
+	h3
+	h4
+		font-weight normalWeightRetina

@@ -1,0 +1,22 @@
+.tooltip
+	position relative
+	white-space nowrap // prevent double lined tooltips, they suck!
+	& > .tip
+		position absolute
+		z-index zindexTooltip
+		border-radius 2px
+		bottom 100%
+		left 0
+		background-color rgba(#000, .8)
+		color pureWhite
+		font-weight 100
+		font-size .8em
+		line-height 1em
+		height 1.2em
+		padding .2em .5em
+		white-space nowrap
+		&::before
+			content ""
+			display block
+			position absolute
+			arrow-bottom(5px, rgba(#000, .8))

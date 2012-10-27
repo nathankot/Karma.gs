@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+# THANKS
+
+# TECHNOLOGY
+
+    HTML5
+    CSS3
+    Karma.gs
+    Goldilocks approach
+    Stylus

@@ -1,0 +1,36 @@
+.loader
+	display inline-block
+	ie7-inline-block()
+
+.cssanimations .loader
+	width 0
+	height 1px	
+	
+	arrow-top(22px, complementColorLight)
+	
+	animation-name loader
+	animation-duration 1s
+	animation-iteration-count infinite
+	animation-timing-function cubic-bezier(.77,.25,.19,1.21)
+	
+	&.loader-input
+		arrow-top(8px, complementColorLight)
+		margin-left 14px
+		margin-bottom 3px
+
+.no-cssanimations .loader
+	&::before
+		content 'loading'
+		color complementColorLight
+		
+@keyframes loader {
+
+	0% {
+		rotate(0)
+	}
+	
+	100% {
+		rotate(360deg)
+	}
+
+}
