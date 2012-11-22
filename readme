@@ -6,6 +6,8 @@ Heavily inspired by [semantic.gs](http://semantic.gs/), and [the Goldilocks Appr
 
 ## Requirements
 
+You will need to be using [Stylus](http://learnboost.github.com/stylus/). If you haven't heard of it, Stylus is a _very_ powerful css preprocessor (like LESS or SASS). A lot of the features in Karma.gs can't be implemented in the other preprocessors.
+
 - [Stylus](http://learnboost.github.com/stylus/)
 
 ## Features
