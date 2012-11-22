@@ -1,6 +1,6 @@
 // color test
 .color-test
-	@extends .clearfix
+	clearfix()
 	h3
 		clear both
 	div
@@ -65,8 +65,12 @@
 .row
 	row()
 
-.span3
-	columns(1.5)
-
-.span12
-	columns(12)
+for num in 1..6
+	.span{num}
+		margin 5px 0
+		text-align center
+		background-color complementColorBackground
+		border-radius 3px
+		color baseColor
+		line-height 2em
+		columns(num)

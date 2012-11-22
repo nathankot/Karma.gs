@@ -1,23 +1,23 @@
-/* ======================================
-   Global styles
-   Core styles go here.
-   E.g: typography, buttons, form styles
-   They SHOULD not involve layouting
-   Individual components and modules must
-   Go into separate files. See below for
-   Details.
-   ====================================== */
+/**
+ * Core _layouting_ styles go here.
+ * Typography, headings, background etc.
+ * These styles should be implemented on ALL device sizes.
+ *
+ * Individual components and modules must go into SEPARATE files.
+ */
 
-/* Page scrollbar settings
-   ====================================== */
+/*
+Scroll bar settings
+====================================== */
 html
 	overflow-y scroll
 	&
 	body
 		overflow-x hidden
 
-/* Very common elements
-   ====================================== */
+/*
+Generic elements
+====================================== */
 body
 	background-color offWhite
 
@@ -55,63 +55,34 @@ a:active,
 a:focus
 	outline none
 
-/* General semantic tags
-   ====================================== */
 header
+	margin-bottom lineHeight
 section
-article
 	margin-bottom lineHeight
 
-/* General layout
-   ====================================== */
-.header
-	row()
 
-.main-header
-	columns(3, true)
-
-.main-nav
-	columns(3, true)
-	pull-right()
-
-
-/*	======================================
-		Global file imports
-		These files should make use of @media daddy
-		and @media mummy
-		The default style should be for the
-		'baby' size.
-		====================================== */
-
-/* Components
-   Non-app specific
-   Typically buttons, horizontal rules, tooltips etc.
-   ====================================== */
-// fonts
+/*
+Import rules
+====================================== */
 @import 'fonts.styl'
-// input styles
-@import '../components/inputs.styl'
-// import the button styles
-@import '../components/buttons.styl'
-// import form styles
-@import '../components/forms.styl'
-// lists
-@import '../components/lists.styl'
-// divisors
-@import '../components/divisors.styl'
-// tooltip styles
-@import '../components/tooltips.styl'
-// alerts
-@import '../components/alerts.styl'
-// modals
-@import '../components/modals.styl'
-// loader
-@import '../components/loader.styl'
-// pagination
-@import '../components/pagination.styl'
 
-/* MODULES
-   Modules tend to be app-specific
-   They are blocks of content/design that can be modulized
-   ====================================== */
-// Put them in ../modules/ and import them here
+@import '../components/inputs.styl'
+@import '../components/buttons.styl'
+@import '../components/forms.styl'
+
+@import '../components/lists.styl'
+@import '../components/divisors.styl'
+@import '../components/icons.styl'
+@import '../components/tooltips.styl'
+@import '../components/alerts.styl'
+@import '../components/modals.styl'
+@import '../components/loader.styl'
+@import '../components/pagination.styl'
+@import '../components/messages.styl'
+
+/*
+MODULES
+Modules tend to be app-specific
+They are blocks of content/design that can be modulized
+====================================== */
+/* Import your modules here */

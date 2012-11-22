@@ -3,12 +3,10 @@
 
 # TEAM
 
-# THANKS
-
-# TECHNOLOGY
-
+# Thanks + Technology
     HTML5
     CSS3
     Karma.gs
     Goldilocks approach
     Stylus
+    Font Awesome
