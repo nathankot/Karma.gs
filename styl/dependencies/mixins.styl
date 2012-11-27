@@ -16,12 +16,12 @@ svg-background(uri, alt-uri, scale = 1)
 		width (width / 16)em
 		height (height / 16)em
 		background-image url(uri)
-		background-size(100% 100%)
+		background-size 100% 100%
 
 // Fix transitions that make absolute/relatively positioned element's text thinner
-position(pos)
+position(pos, dont_translate = false)
 	position pos
-	if pos == 'absolute' || pos == 'relative'
+	if !dont_translate && (pos == 'absolute' || pos == 'relative')
 		-webkit-transform unquote('translateZ(0)')
 
 // The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
@@ -400,7 +400,7 @@ buttonBackground(startColor, endColor)
 // -------------------------
 // For tipsies and popovers
 arrow-bottom($arrowWidth = 5px, $arrowColor = black)
-	bottom: 0
+	top 100%
 	left: 50%
 	margin-left: (- $arrowWidth)
 	margin-bottom: (- $arrowWidth)
@@ -410,7 +410,7 @@ arrow-bottom($arrowWidth = 5px, $arrowColor = black)
 
 arrow-right($arrowWidth = 5px, $arrowColor = black)
 	top: 50%
-	right: 0
+	left 100%
 	margin-top: (- $arrowWidth)
 	margin-right: (- $arrowWidth)
 	border-top: $arrowWidth solid transparent
@@ -418,7 +418,7 @@ arrow-right($arrowWidth = 5px, $arrowColor = black)
 	border-left: $arrowWidth solid $arrowColor
 
 arrow-top($arrowWidth = 5px, $arrowColor = black)
-	top: 0
+	bottom 100%
 	left: 50%
 	margin-left: (- $arrowWidth)
 	margin-top: (- $arrowWidth)
@@ -428,7 +428,7 @@ arrow-top($arrowWidth = 5px, $arrowColor = black)
 
 arrow-left($arrowWidth = 5px, $arrowColor = black)
 	top: 50%
-	left: 0
+	right 100%
 	margin-top: (- $arrowWidth)
 	margin-left: (- $arrowWidth)
 	border-top: $arrowWidth solid transparent
