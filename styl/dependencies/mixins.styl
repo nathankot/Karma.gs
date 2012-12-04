@@ -18,11 +18,9 @@ svg-background(uri, alt-uri, scale = 1)
 		background-image url(uri)
 		background-size 100% 100%
 
-// Fix transitions that make absolute/relatively positioned element's text thinner
-position(pos, dont_translate = false)
-	position pos
-	if !dont_translate && (pos == 'absolute' || pos == 'relative')
-		-webkit-transform unquote('translateZ(0)')
+// Use graphics acceleration
+use-gfx()
+	-webkit-transform unquote('translateZ(0)')
 
 // The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
 clearfix()

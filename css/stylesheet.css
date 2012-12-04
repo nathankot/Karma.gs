@@ -187,8 +187,7 @@ dl:after,
   visibility: hidden;
 }
 .visuallyhidden {
-  position: absolute;
-  -webkit-transform: translateZ(0);
+  position: absolute !important;
   top: -9999px !important;
   left: -9999px !important;
 }
@@ -516,12 +515,10 @@ textarea {
 }
 .content-editable {
   position: relative;
-  -webkit-transform: translateZ(0);
 }
 .content-editable::before {
   display: block;
   position: absolute;
-  -webkit-transform: translateZ(0);
   z-index: -1;
   content: "";
   top: -0.2em;
@@ -684,7 +681,6 @@ fieldset {
 }
 .lt-ie8 fieldset {
   position: relative;
-  -webkit-transform: translateZ(0);
 }
 legend {
   color: #394446;
@@ -698,7 +694,6 @@ legend {
 }
 .lt-ie8 legend {
   position: absolute;
-  -webkit-transform: translateZ(0);
   top: -0.5em;
   left: 0;
 }
@@ -800,7 +795,6 @@ dl dd + dd {
 }
 .divisor .arrow {
   position: relative;
-  -webkit-transform: translateZ(0);
   overflow: visible;
   border: none;
   padding: 0;
@@ -809,7 +803,6 @@ dl dd + dd {
 }
 .divisor .arrow.top {
   position: absolute;
-  -webkit-transform: translateZ(0);
   top: -1.618em;
   left: 0;
   right: 0;
@@ -818,8 +811,7 @@ dl dd + dd {
   display: block;
   content: "";
   position: absolute;
-  -webkit-transform: translateZ(0);
-  bottom: 0;
+  top: 100%;
   left: 50%;
   margin-left: -15px;
   margin-bottom: -15px;
@@ -829,7 +821,6 @@ dl dd + dd {
 }
 .divisor .arrow.bottom {
   position: absolute;
-  -webkit-transform: translateZ(0);
   bottom: -1.618em;
   left: 0;
   right: 0;
@@ -838,8 +829,7 @@ dl dd + dd {
   display: block;
   content: "";
   position: absolute;
-  -webkit-transform: translateZ(0);
-  top: 0;
+  bottom: 100%;
   left: 50%;
   margin-left: -15px;
   margin-top: -15px;
@@ -849,7 +839,6 @@ dl dd + dd {
 }
 .divisor {
   position: relative;
-  -webkit-transform: translateZ(0);
   background: #f0f0f2;
   overflow: visible;
   padding: 1.618em 0;
@@ -860,7 +849,6 @@ dl dd + dd {
   display: block;
   content: "";
   position: absolute;
-  -webkit-transform: translateZ(0);
   top: 0;
   bottom: 0;
   left: -9999px;
@@ -871,7 +859,6 @@ dl dd + dd {
   display: block;
   content: "";
   position: absolute;
-  -webkit-transform: translateZ(0);
   top: 0;
   bottom: 0;
   left: 100%;
@@ -1839,12 +1826,10 @@ dl dd + dd {
 }
 .tooltip {
   position: relative;
-  -webkit-transform: translateZ(0);
   white-space: nowrap;
 }
 .tooltip > .tip {
   position: absolute;
-  -webkit-transform: translateZ(0);
   z-index: 1000;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -1864,8 +1849,7 @@ dl dd + dd {
   content: "";
   display: block;
   position: absolute;
-  -webkit-transform: translateZ(0);
-  bottom: 0;
+  top: 100%;
   left: 50%;
   margin-left: -5px;
   margin-bottom: -5px;
@@ -1946,7 +1930,6 @@ dl dd + dd {
 }
 .modal .modal-header {
   position: absolute;
-  -webkit-transform: translateZ(0);
   background-color: #fafafa;
   bottom: 100%;
   left: 0;
@@ -1957,7 +1940,6 @@ dl dd + dd {
 }
 .modal .modal-body {
   position: absolute;
-  -webkit-transform: translateZ(0);
   top: 0;
   left: 0;
   right: 0;
@@ -1968,7 +1950,6 @@ dl dd + dd {
 }
 .modal .modal-footer {
   position: absolute;
-  -webkit-transform: translateZ(0);
   top: 100%;
   left: 0;
   right: 0;
@@ -1992,19 +1973,16 @@ dl dd + dd {
   border-radius: 50%;
   cursor: pointer;
   position: absolute;
-  -webkit-transform: translateZ(0);
   top: -4.5em;
   right: 0.5em;
 }
 .pagination {
   position: relative;
-  -webkit-transform: translateZ(0);
   overflow: hidden;
   text-align: left;
 }
 .pagination ul {
   position: relative;
-  -webkit-transform: translateZ(0);
   float: left;
   left: 50%;
   margin-top: 1.618em;
@@ -2012,7 +1990,6 @@ dl dd + dd {
 }
 .pagination li {
   position: relative;
-  -webkit-transform: translateZ(0);
   float: left;
   right: 50%;
   margin: 0 0.3em;
@@ -2060,7 +2037,6 @@ dl dd + dd {
 }
 .message {
   position: relative;
-  -webkit-transform: translateZ(0);
   padding: 0.5em 0.5em 1.618em 0.5em;
   margin-bottom: 1.618em;
 }
@@ -2069,7 +2045,6 @@ dl dd + dd {
 }
 .message date {
   position: absolute;
-  -webkit-transform: translateZ(0);
   bottom: 0.5em;
   right: 0.5em;
   font-size: 0.8em;
