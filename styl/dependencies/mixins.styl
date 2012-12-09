@@ -8,12 +8,17 @@ svg-background(uri, alt-uri, scale = 1)
 
 	font-size 1em // when working with font sizes we need to make sure we are using the default size
 
-	background url(alt-uri) 0 0 no-repeat
-	width width
-	height height
-	background-size(@width @height)
-	filter s("progid:DXImageTransform.Microsoft.AlphaImageLoader(src=%s, sizingMethod='scale');", alt-uri)
-	-ms-filter "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=%s, sizingMethod='scale')" % alt-uri
+	.no-js &
+	.no-svg &
+		background url(alt-uri) 0 0 no-repeat
+		width width
+		height height
+		background-size(@width @height)
+
+	.lt-ie9 &
+		background none
+		filter s("progid:DXImageTransform.Microsoft.AlphaImageLoader(src=%s, sizingMethod='scale');", alt-uri)
+		-ms-filter "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=%s, sizingMethod='scale')" % alt-uri
 
 	.svg &
 		width (width / 16)em
