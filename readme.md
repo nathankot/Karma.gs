@@ -27,6 +27,7 @@ You will need to be using [Stylus](http://learnboost.github.com/stylus/). If you
 ### Using the grid
 
 #### Conventional Way
+
 Usually using a grid means adding a whole lot of non-semantic styling nonsense in your markup.
 
 ```html
@@ -37,6 +38,7 @@ Usually using a grid means adding a whole lot of non-semantic styling nonsense i
 ```
 
 #### Semantic way
+
 With a semantic grid system, this nonsense is moved to your stylesheet where it belongs.
 
 ```stylus
@@ -56,6 +58,7 @@ With a semantic grid system, this nonsense is moved to your stylesheet where it 
 ```
 
 #### Infinite Division
+
 Karma.gs lets you divide your grid infinitely. Which means although you are inclined towards using whole numbers, you are not restricted to it. Useful for those times when you're making a page extra special (or something).
 
 ```stylus
@@ -71,12 +74,11 @@ Karma.gs lets you divide your grid infinitely. Which means although you are incl
 
 #### columns()
 
-`columns()` actually takes _3_ arguments. `columns(span, expand_full, ignore_media)`.
-Here's a breakdown of the additional two options:
+`columns()` can take _3_ arguments. `columns(span, expand_full, ignore_media)`. Here's a breakdown of the additional two options:
 
-*expand_full*: Defaults to `false`. If set to `true`, the grid element is forced to be resized to `width: 100%;` when the browser is shrinked to 'baby' (more on that later).
+- *expand_full* : Defaults to `false`. If set to `true`, the grid element is forced to be resized to `width: 100%;` when the browser is shrinked to 'baby' (more on that later).
 
-*ignore_media*: Defaults to `false`. If set to `true`, the grid element will _only_ use a percentage width, and _will not be affected by a change in screen size_. This is a useful option when you're using a grid within a grid.
+- *ignore_media* : Defaults to `false`. If set to `true`, the grid element will _only_ use a percentage width, and _will not be affected by a change in screen size_. This is a useful option when you're using a grid within a grid.
 
 #### offset()
 
@@ -89,9 +91,11 @@ Pull to the right.
 ### Using the Goldilocks Approach
 
 #### Intro
+
 The goldilocks approach basically means that your page should cater to three different sizes - _too small_, _too big_ and _just right_. It also promotes a mobile-first design methodology. This too is reflected in Karma.gs. Mobile styles _are the default_, which means that older browsers without media query support will simply be shown the mobile view of the site. It is very important that in using this grid, **you are prepared to think mobile-first**.
 
 #### Folder structure
+
 There are _four key files_ you should take note of:
 
 - `styl/layout/global.styl`: everything

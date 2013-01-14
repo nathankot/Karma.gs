@@ -2,11 +2,15 @@
 # The humans responsible & technology colophon
 
 # TEAM
+  <your title>: <your name>
+  Site:
+  Twitter:
+  Location:
 
 # Thanks + Technology
-    HTML5
-    CSS3
-    Karma.gs
-    Goldilocks approach
-    Stylus
-    Font Awesome
+  HTML5
+  CSS3
+  Karma.gs
+	Goldilocks approach
+  Stylus
+  Font Awesome
