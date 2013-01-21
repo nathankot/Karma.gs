@@ -3,88 +3,105 @@
  */
 
 /*
-Grid stuff
+Infrastructure
+====================================== */
+is_rails = true
+generate_retina_image_alternatives = true
+
+/*
+Grid
 ====================================== */
 _goldilocks                 = 30em
 _goldilocks_padding         = 0.809em
 _grid_columns               = 6
 _gutter_width               = 1.2em /* the minimum proportion of full size for a column to width:100% in a small viewport */
-_grid_expand_min_proportion = .6
-/* Media queries */
-baby				= s("screen and (max-width: %s)", (_goldilocks + 4*_goldilocks_padding))
-mummy				= s("screen and (min-width: %s) and (max-width: %s)", (_goldilocks + 4*_goldilocks_padding), (_goldilocks*2 + 4*_goldilocks_padding))
-daddy				= s("screen and (min-width: %s)", (_goldilocks + 4*_goldilocks_padding))
-daddyOnly		= s("screen and (min-width: %s)", (_goldilocks*2 + 4*_goldilocks_padding))
-retina			= "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)"
+_grid_expand_min_proportion = 0
 
 /*
-Font
+Media Queries
 ====================================== */
-lineHeight          = _goldilocks_padding * 2
+baby           = s("screen and (max-width: %s)", (_goldilocks + 4*_goldilocks_padding))
+mummy          = s("screen and (min-width: %s) and (max-width: %s)", (_goldilocks + 4*_goldilocks_padding), (_goldilocks*2 + 4*_goldilocks_padding))
+daddy          = s("screen and (min-width: %s)", (_goldilocks + 4*_goldilocks_padding))
+daddyOnly      = s("screen and (min-width: %s)", (_goldilocks*2 + 4*_goldilocks_padding))
+retina         = "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)"
+webkit         = "screen and(-webkit-min-device-pixel-ratio:0)"
+ipad_portrait  = "all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)"
+ipad_landscape = "all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape)"
 
-titleFontFamily     = "Franklin Gothic Medium", Futura, "Century Gothic", AppleGothic, sans-serif
-headingFontFamily   = Helvetica, Arial, sans-serif
-paragraphFontFamily = "Helvetica Neue", Helvetica, Arial, sans-serif
+/*
+Typographic scales
+====================================== */
+fibonacci_sequence   = 0.6154 0.6154 0.6154 0.6154 1 1.6154 2.6154 3.6154 3.6154 3.6154
+traditional_sequence = 0.666 0.75 0.8333 0.9167 1 1.1667 1.333 1.5 1.75 2
+lecobusier_sequence  = 0.6154 0.6154 0.6154 0.8077 1 1.3077 1.6154 2.1154 2.615 3.4231
+sequence_center      = 4
+
+/*
+Type
+====================================== */
+baseSize            = 100%
+lineHeight          = 1.6em /* Specify this in em's */
+typographicScale    = traditional_sequence
+
+titleFontFamily     = "futura-pt", Futura, "Century Gothic", sans-serif
+headingFontFamily   = "brandon-grotesque", calibri, candara, serif
+paragraphFontFamily = "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif
 inputFontFamily     = "Helvetica Neue", Helvetica, Arial, sans-serif
 monoFontFamily      = monospace
 
+/*
+Weights
+====================================== */
 thinWeight          = 100
-normalWeight        = 300
-normalWeightRetina  = 400
-boldWeight          = bold
-heavyWeight         = 900
+lightWeight         = 300
+bookWeight          = 400
+mediumWeight        = 500
+semiBoldWeight      = 600
+boldWeight          = 700
+extraBoldWeight     = 800
+blackWeight         = 900
 
 /*
-Color
-Most components work with a 'base color'
-and 'complement color'.
+Colors
 ====================================== */
-_color_dark(color)
-	darken(color, 60%)
-_color_light(color)
-	lighten(color, 60%)
-_color_background(color)
-	lighten(desaturate(color, 70%), 90%)
+backgroundColor						= #ffffff
 
 /* Thematic colors */
-baseColor                 = #58838C
-baseColorDark             = _color_dark(baseColor)
-baseColorLight            = _color_light(baseColor)
-baseColorBackground       = _color_background(baseColor)
-
-complementColor           = spin(baseColor, 45deg)
-complementColorDark       = _color_dark(complementColor)
-complementColorLight      = _color_light(complementColor)
-complementColorBackground = _color_background(complementColor)
+baseColor                 = #96B67C
+baseColorDark             = #85A969
+baseColorLight            = #A7D487
+baseColorBackground       = #94BA2E
+complementColor           = #fff
+complementColorDark       = #F2F2F2
+complementColorLight      = #fff
+complementColorBackground = #DBEBCE
 
 /* Primary colors */
-blue				= #17649A
-red					= #CD1231
-green				= #61AE24
-yellow			= #F0D423
+blue                      = #17649A
+red                       = #CD1231
+green                     = #61AE24
+yellow                    = #F0D423
 
 /* Descriptive colors */
-primary				= baseColor
-error					= red
-warning				= yellow
-success				= green
+primary                   = baseColor
+error                     = red
+warning                   = yellow
+success                   = green
 
 /* Blacks and whites */
-pureBlack			= #000
-offBlack			= hsla(hue(baseColor), 10%, 25%, 1)
-offWhite			= hsla(hue(baseColor), 0%, 98%, 1)
-pureWhite			= #fff
+pureBlack                 = #000
+offBlack                  = hsla(hue(baseColor), 10%, 25%, 1)
+offWhite                  = hsla(hue(baseColor), 0%, 98%, 1)
+pureWhite                 = #fff
 
-/* Shades of gray */
-grayDark			= lighten(offBlack, 15%)
-gray					= lighten(grayDark, 15%)
-grayLight			= lighten(gray, 15%)
+/* Shades of Gray ;) */
+grayDark                  = #616161
+gray                      = #DADADA
+grayLight                 = #F2F2F2
 
 /*
 Z-index settings
-It's recommended you keep your z-index
-configurations here. Use categorizing names
-for easier management.
 ====================================== */
 zindexTooltip		= 1000
 zindexToolbar		= 1100

@@ -1,30 +1,6 @@
-// SVG background images
-svg-background(uri, alt-uri, scale = 1)
-
-	size = image-size(alt-uri)
-	width = size[0] * scale
-	height = size[1] * scale
-	aspect = width / height
-
-	font-size 1em // when working with font sizes we need to make sure we are using the default size
-
-	.no-js &
-	.no-svg &
-		background url(alt-uri) 0 0 no-repeat
-		width width
-		height height
-		background-size(@width @height)
-
-	.lt-ie9 &
-		background none
-		filter s("progid:DXImageTransform.Microsoft.AlphaImageLoader(src=%s, sizingMethod='scale');", alt-uri)
-		-ms-filter "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=%s, sizingMethod='scale')" % alt-uri
-
-	.svg &
-		width (width / 16)em
-		height (height / 16)em
-		background-image url(uri)
-		background-size(100% 100%)
+client-appearance()
+	-moz-appearance arguments
+	-webkit-appearance arguments
 
 // Use graphics acceleration
 use-gfx()
@@ -106,6 +82,11 @@ hide-text()
 
 // CSS3 PROPERTIES
 // --------------------------------------------------
+
+// Font Smoothing
+font-smoothing()
+	font-smoothing arguments
+	-webkit-font-smoothing arguments
 
 // Border Radius
 border-radius()

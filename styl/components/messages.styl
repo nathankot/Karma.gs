@@ -1,16 +1,25 @@
-.message
-	@extends .clearfix
-	position relative
-	padding .5em .5em lineHeight .5em
-	margin-bottom lineHeight
-	
-	&:nth-of-type(odd)
-		background-color complementColorBackground
-	
-	date
-		position absolute
-		bottom .5em
-		right .5em
-		
-		font-size .8em
-		color grayLight
+.messages
+	scale_type(1)
+	text-align center
+	background-color pureWhite
+	padding .3em
+
+	> div
+		padding .4em
+
+	.notice
+		background-color _color_background(primary)
+		color _color_dark(primary)
+
+	.success
+		background-color _color_background(success)
+		color _color_dark(success)
+
+	.warning
+		background-color _color_background(warning)
+		color _color_dark(warning)
+
+	.error
+		background-color _color_background(error)
+		color _color_dark(error)
+
