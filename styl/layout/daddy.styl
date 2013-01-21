@@ -1,13 +1,25 @@
-/**
- * Daddy
- * Primarily used by desktop computers.
- * Should be configured second _after_ baby.
- */
+/*
+Daddy - styles for the big bad viewports.
+
+Take a look at baby.styl if you haven't
+yet.
+
+This file should be configured AFTER baby
+and BEFORE mummy.
+====================================== */
 @media daddy
-	#container
+	.container
 		padding (_goldilocks_padding*2)em
 		margin 0 auto
 		max-width (_goldilocks*2)em
-		min-height (lineHeight*12)
+		min-height line_breaks(12) /* You can remove this if you don't
+																	want a minimum layout height */
 
+/*
+Daddy styles are ALSO applied to mummy
+screen sizes.
+
+Un-comment the line below if you want
+to write styles that ONLY apply to Daddy.
+====================================== */
 // @media daddyOnly

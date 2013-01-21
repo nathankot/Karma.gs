@@ -1,10 +1,8 @@
-/* ======================================
-   The core grid engine
-   For adaptiveness - we keep gutter the same and scale the columns
-   ====================================== */
-// _column_width
-// _gutter_width
-// _grid_columns
+/*
+You've stumbled upon Karma.gs's core
+grid engine :)
+====================================== */
+
 _get_column_width(size_multiple = 1)
 	( (_goldilocks * size_multiple) - (_grid_columns - 1) * _gutter_width ) / (_grid_columns)
 
@@ -29,14 +27,14 @@ row(columns = _grid_columns)
 		_generate_row(2)
 	@media mummy
 		_generate_row()
-	
+
 columns(span = 1, expand_full = false, ignore_media = false)
-	
+
 	float left
 	margin-right 0
 	padding-left 0
 	padding-right 0
-	
+
 	if expand_full == 'daddy'
 		_generate_column(span, 2)
 	else if expand_full == 'mummy'
@@ -44,19 +42,19 @@ columns(span = 1, expand_full = false, ignore_media = false)
 	else if expand_full == 'baby'
 		columns(span, false, true)
 	else
-	
+
 		if expand_full == false && span <= (_grid_columns * _grid_expand_min_proportion)
 			width round(((span / _grid_columns)*100)%)
 		else
 			width 100%
-			
+
 		if ignore_media == false
 			&
 				@media daddy
 						_generate_column(span, 2)
 				@media mummy
 						_generate_column(span)
-		
+
 offset(span = 1)
 	@media daddy
 		margin-left (_get_span_width(span, 2) + _gutter_width * 2)!important

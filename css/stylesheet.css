@@ -175,11 +175,6 @@ textarea {
   color: #fff;
   text-shadow: 0 0 2px #85a969;
 }
-.inversion.strong,
-.divisor.strong,
-.divisor.strong {
-  background-color: #94ba2e;
-}
 .divisor {
   position: relative;
   margin-top: 25.6px;
@@ -474,7 +469,7 @@ button,
   font-size: 1em;
   line-height: 1.4em;
   font-weight: normalWeight;
-  font-family: "brandon-grotesque", calibri, candara, serif;
+  font-family: calibri, candara, serif;
   color: #fafafa;
   text-decoration: none;
   padding: 0.3em 1em;
@@ -831,36 +826,31 @@ html body {
   overflow-x: hidden;
 }
 body {
-  background-color: #fafafa;
+  background-color: #fff;
 }
 h1,
-h2,
+h2 {
+  margin-bottom: 25.6px;
+}
 h3,
 h4 {
-  margin-bottom: 0.8em;
+  margin-bottom: 12.8px;
+}
+hgroup {
+  margin-bottom: 51.2px;
 }
 hgroup h1,
 hgroup h2,
 hgroup h3,
 hgroup h4 {
   margin-bottom: 0;
-  margin-left: 0.1em;
-}
-hgroup h1:first-child,
-hgroup h2:first-child,
-hgroup h3:first-child,
-hgroup h4:first-child {
-  margin-left: 0;
-}
-hgroup {
-  margin-bottom: 0.8em;
 }
 p,
 ul,
 ol,
 dl,
 blockquote {
-  margin-bottom: 1.6em;
+  margin-bottom: 25.6px;
   max-width: 30em;
 }
 a,
@@ -874,25 +864,26 @@ a:active,
 a:focus {
   outline: none;
 }
-header {
-  margin-bottom: 1.6em;
+header,
+section,
+article {
+  margin-bottom: 25.6px;
 }
-section {
-  margin-bottom: 1.6em;
-}
-#container {
+.container {
   padding: 1.618em 0.809em;
   max-width: 30em;
   margin: auto;
 }
 @media screen and (min-width: 33.236em) {
-  #container {
+  .container {
     padding: 1.618em;
     margin: 0 auto;
     max-width: 60em;
-    min-height: 19.200000000000003em;
+    min-height: 307.20000000000005px;
     height: auto !important;
-    height: 19.200000000000003em;
+    height: 307.20000000000005px;
+/* You can remove this if you don't
+																	want a minimum layout height */
   }
 }
 @media screen and (min-width: 33.236em) and (max-width: 63.236em) {
@@ -901,40 +892,59 @@ section {
   }
 }
 body {
-  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  font-weight: normalWeight;
-  line-height: 1.6em;
-  color: #3f4639;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #96b67c;
+  text-shadow: 0 0 1px rgba(255,255,255,0.8);
+/*
+	I prefer antialiased font-smoothing.
+	(btw font-smoothing is a mixin which
+	generates vendor prefixes)
+	Alternatively you could go for 'subpixel-antialiased'.
+	Since font-smoothing is only available for webkit,
+	the fallback (text-shadowing) is specified above.
+	*/
+}
+@media screen and(-webkit-min-device-pixel-ratio:0) {
+  body {
+    text-shadow: none;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+h1,
+h2,
+h3 {
+  font-weight: 700;
 }
 h1,
 h2,
 h3,
 h4 {
-  font-family: "brandon-grotesque", calibri, candara, serif;
-  font-weight: normalWeight;
-  line-height: 1.6em;
-  color: #3f4639;
+  font-family: calibri, candara, serif;
 }
 h1 {
-  color: #565f4e;
+  font-size: 2em;
+  line-height: 1.6em;
 }
 h2 {
-  color: #6d7963;
+  font-size: 1.75em;
+  line-height: 1.8285714285714287em;
 }
 h3 {
-  color: #839178;
-}
-h4 {
-  color: #9ba592;
+  font-size: 1.5em;
+  line-height: 1.0666666666666667em;
 }
 p,
 ul,
 ol,
 dl,
 blockquote {
-  font-size: 1em;
-  line-height: 1.6em;
+  color: #85a969;
+  font-size: 1.1667em;
+  line-height: 1.3713893888746036em;
 }
 a,
 a:visited {
@@ -944,33 +954,23 @@ a:visited {
 a:hover {
   text-decoration: none;
 }
-h1 {
-  font-size: 2em;
-}
-h2 {
-  font-size: 1.6em;
-}
-h3 {
-  font-size: 1.4em;
-}
-h4 {
-  font-size: 1.1em;
-}
-strong {
+strong,
+b {
   font-weight: 700;
 }
-em {
+em,
+i {
   font-style: italic;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   body {
-    font-weight: normalWeightRetina;
+    font-weight: 400;
   }
   h1,
   h2,
   h3,
   h4 {
-    font-weight: normalWeightRetina;
+    font-weight: 800;
   }
 }
 /* Comment this in production */

@@ -1,6 +1,6 @@
-/**
- * All configurations should be kept in this file.
- */
+/*
+KEEP ALL YOUR CONFIGURATION HERE.
+====================================== */
 
 /*
 Infrastructure
@@ -10,6 +10,9 @@ generate_retina_image_alternatives = true
 
 /*
 Grid
+
+_golidlocks : The optimal width text
+							should be for reading.
 ====================================== */
 _goldilocks                 = 30em
 _goldilocks_padding         = 0.809em
@@ -19,6 +22,8 @@ _grid_expand_min_proportion = 0
 
 /*
 Media Queries
+
+You probaby don't need to change these.
 ====================================== */
 baby           = s("screen and (max-width: %s)", (_goldilocks + 4*_goldilocks_padding))
 mummy          = s("screen and (min-width: %s) and (max-width: %s)", (_goldilocks + 4*_goldilocks_padding), (_goldilocks*2 + 4*_goldilocks_padding))
@@ -31,6 +36,15 @@ ipad_landscape = "all and (device-width: 768px) and (device-height: 1024px) and 
 
 /*
 Typographic scales
+
+The default is pretty good.
+
+Your welcome to create your own. For
+info, see: http://lamb.cc/typograph/
+
+sequence_center : The center of the
+									sequence, used for
+									paragraph bodies.
 ====================================== */
 fibonacci_sequence   = 0.6154 0.6154 0.6154 0.6154 1 1.6154 2.6154 3.6154 3.6154 3.6154
 traditional_sequence = 0.666 0.75 0.8333 0.9167 1 1.1667 1.333 1.5 1.75 2
@@ -44,14 +58,17 @@ baseSize            = 100%
 lineHeight          = 1.6em /* Specify this in em's */
 typographicScale    = traditional_sequence
 
-titleFontFamily     = "futura-pt", Futura, "Century Gothic", sans-serif
-headingFontFamily   = "brandon-grotesque", calibri, candara, serif
-paragraphFontFamily = "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif
+titleFontFamily     = Futura, "Century Gothic", sans-serif
+headingFontFamily   = calibri, candara, serif
+paragraphFontFamily = "Helvetica Neue", Helvetica, Arial, sans-serif
 inputFontFamily     = "Helvetica Neue", Helvetica, Arial, sans-serif
 monoFontFamily      = monospace
 
 /*
 Weights
+
+These weights use the same names that
+Typekit uses.
 ====================================== */
 thinWeight          = 100
 lightWeight         = 300
@@ -64,6 +81,19 @@ blackWeight         = 900
 
 /*
 Colors
+
+This grid system assumes a complementary
+colors scheme as the foundation.
+
+If you are going for a mono-tone scheme,
+you should set both base and complement
+colors identical (and don't simply remove)
+the complement section, it is referenced
+in a few components.
+
+If you want a more diverse color scheme
+feel free to add more variables e.g tertiaryColor,
+tertiaryColorDark...
 ====================================== */
 backgroundColor						= #ffffff
 
@@ -102,6 +132,10 @@ grayLight                 = #F2F2F2
 
 /*
 Z-index settings
+
+Its not required, but here's a good read
+if you don't know about stacking context's:
+http://philipwalton.com/articles/what-no-one-told-you-about-z-index/
 ====================================== */
 zindexTooltip		= 1000
 zindexToolbar		= 1100

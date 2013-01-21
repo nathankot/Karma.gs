@@ -1,10 +1,18 @@
-/**
- * Baby
- * Primary used by mobile devices.
- * Holding true to mobile-first design, these styles
- * should be the first to be configured.
- */
-#container
+/*
+This is the baby. It will be displayed to
+users on mobile or legacy browsers.
+It's not inside a media query because
+this grid-system assumes a mobile-first
+development strategy.
+
+What to put here:
+Layout-specfic styles that *WILL BE ADJUSTED*
+in larger viewports. Layout-specific items that
+*will not change* should go into global.styl
+instead.
+====================================== */
+
+.container
 	padding (_goldilocks_padding*2) _goldilocks_padding
 	max-width _goldilocks
 	margin auto

@@ -1,10 +1,13 @@
-/**
- * Core _layouting_ styles go here.
- * Typography, headings, background etc.
- * These styles should be implemented on ALL device sizes.
- *
- * Individual components and modules must go into SEPARATE files.
- */
+/*
+This is the CORE LAYOUT STUFF.
+
+Its *never* going to change, and is viewport
+independent.
+
+If something here needs to be adjusted for
+different viewports, please use a baby/mummy/daddy
+instead.
+====================================== */
 
 /*
 Scroll bar settings
@@ -19,29 +22,27 @@ html
 Generic elements
 ====================================== */
 body
-	background-color offWhite
+	background-color backgroundColor
 
-h1,
-h2,
-h3,
+h1
+h2
+	margin-bottom line_breaks(1)
+
+h3
 h4
-	margin-bottom (lineHeight/2)em
-
-	hgroup &
-		margin-bottom 0
-		margin-left .1em
-		&:first-child
-			margin-left 0
+	margin-bottom line_breaks(.5)
 
 hgroup
-	margin-bottom (lineHeight/2)em
+	margin-bottom line_breaks(2)
+	h1, h2, h3, h4
+		margin-bottom 0
 
 p,
 ul,
 ol,
 dl,
 blockquote
-	margin-bottom lineHeight
+	margin-bottom line_breaks(1)
 	max-width _goldilocks
 
 a,
@@ -56,14 +57,7 @@ a:focus
 	outline none
 
 header
-	margin-bottom lineHeight
 section
-	margin-bottom lineHeight
+article
+	margin-bottom line_breaks(1)
 
-
-/*
-MODULES
-Modules tend to be app-specific
-They are blocks of content/design that can be modulized
-====================================== */
-/* Import your modules here */
