@@ -3,14 +3,10 @@
 
 # TEAM
   <your title>: <your name>
-  Site:
-  Twitter:
-  Location:
+  <your title>: <your name>
+  <your title>: <your name>
 
 # Thanks + Technology
   HTML5
   CSS3
   Karma.gs
-	Goldilocks approach
-  Stylus
-  Font Awesome
