@@ -1,0 +1,60 @@
+/*
+HEY!
+You don't need .span1, .span2 and all
+that nonsense. These are only here for
+the Karma.gs start page. Ugly right?
+====================================== */
+.row
+	row()
+
+for num in 1..6
+	.span{num}
+		margin 5px 0
+		text-align center
+		background-color complementColorBackground
+		border-radius 3px
+		color pureWhite
+		font-weight boldWeight
+
+		columns(num)
+
+.color-test
+	@extends .clearfix
+
+	> div
+		width 40px
+		height @width
+		float left
+
+	.baseColor
+		background-color baseColor
+	.baseColorLight
+		background-color baseColorLight
+	.baseColorDark
+		background-color baseColorDark
+	.baseColorBackground
+		background-color baseColorBackground
+
+	.complementColor
+		background-color complementColor
+	.complementColorLight
+		background-color complementColorLight
+	.complementColorDark
+		background-color complementColorDark
+	.complementColorBackground
+		background-color complementColorBackground
+
+	.pureWhite
+		background-color pureWhite
+	.offWhite
+		background-color offWhite
+	.grayLight
+		background-color grayLight
+	.gray
+		background-color gray
+	.grayDark
+		background-color grayDark
+	.offBlack
+		background-color offBlack
+	.pureBlack
+		background-color pureBlack
