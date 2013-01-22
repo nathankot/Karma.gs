@@ -10,7 +10,7 @@ Semantic, fully customizable grid system that employs the Goldilocks Approach. H
 
 - You will need to know how to _compile_ or _pre-process_ the Stylus. I recommend using [Codekit](http://incident57.com/codekit/). Or use [this gem](https://github.com/lucasmazza/ruby-stylus) and the Asset Pipeline for integrating with Rails. Or if you use Node, you'll know what to do ;)
 
-- You should be familiar with the [Goldilocks Approach](http://www.designbyfront.com/demo/goldilocks-approach/)
+- You should be familiar with the [Goldilocks Approachh](http://www.designbyfront.com/demo/goldilocks-approach/)
 
 - You will need to adopt a Mobile-first design approach.
 
@@ -21,9 +21,9 @@ Semantic, fully customizable grid system that employs the Goldilocks Approach. H
 - **assets/stylus/stylesheet.styl** : This is the file that you _compile_. It imports all other necessary files. *If you create a new file*, you must import it in this file for changes to take effect.
 - **assets/stylus/config.styl** : This is where you start, take a look and make adjustments suitable to your app. Some of the key configurations will be detailed below.
 - **assets/stylus/dependencies/** : Generally you don't need to touch this folder, it includes the cogs that make Karma.gs work.
-- **assets/stylus/classes/** : These are **extendible** classes such as `.clearfix`. Much like abstract classes in OOP, they must only be extended by your styles via `@extends`
+- **assets/stylus/classes/** : These are **extensible** classes such as `.clearfix`. Much like abstract classes in OOP, they must only be extended by your styles via `@extends`
 - **assets/stylus/layout** : These styles control the layouting (spacing between objects.) It has a `baby.styl`, `mummy.styl`, and `daddy.styl`. More on that later.
-- **assets/stylus/components** : Components are reuseable pieces of styles that form a tangible and severable component within the view. Put them in here.
+- **assets/stylus/components** : Components are reusable pieces of styles that form a tangible and sever-able component within the view. Put them in here.
 - **assets/stylus/modules** : Modules are non-reusable styles related to a specific page or purpose. The styles that it applies need not be contained within an element and can be broad.
 - **assets/stylus/vendor** : You can place external styles, dependencies here.
 
@@ -34,9 +34,9 @@ Semantic, fully customizable grid system that employs the Goldilocks Approach. H
 The grid is totally configurable. Configuration parameters as follows:
 
 - **_goldilocks** : This is the line length that maximizes readability. And the entire grid will be based upon this. 'Desktop' view will be twice this size, 'Tablet' view will be equal to this size.
-- **_goldilocks_padding** : This dictates the padding that goes around your content when the viewport is too small.
+- **_goldilocks_padding** : This dictates the padding that goes around your content when the view-port is too small.
 - **_grid_columns** : The number of grid columns that you want to work with. I suggest keeping it at `6` because it doesn't really matter, more on that below.
-- **_gutter_width** : The gutter you want between your grid columsn.
+- **_gutter_width** : The gutter you want between your grid columns.
 - **_grid_expand_min_proportion** : This determines whether your columns will fully expand or retain their size when they break and are pushed down. If set to `0` (default,) all columns will expand fully. If for example this is set to `.5`, only columns that are larger than _half the container size_ will fully expand.
 
 #### Using
@@ -105,9 +105,9 @@ The variables `baby`, `mummy`, `daddy` and `daddyOnly` are automatically generat
 
 #### The Exception
 
-There is an exception. For layout-specific styles (that propogate throughout your app), it's recommended to keep them in `assets/layouts/[baby|mummy|daddy|global].styl`. It is important to distinguish between them:
+There is an exception. For layout-specific styles (that propagate throughout your app), it's recommended to keep them in `assets/layouts/[baby|mummy|daddy|global].styl`. It is important to distinguish between them:
 
-- **global** : Global layout styles _don't need to be adjusted for different viewports_.
+- **global** : Global layout styles _don't need to be adjusted for different view-ports_.
 - **baby**   : Put your default (yet adjustable) layout styles here, remember, with mobile first, these are the styles that will be shown to legacy browsers.
 - **daddy**  : After you've got your baby styles sussed, adjust them for the big-screen here.
 - **mummy**  : Sometimes the Daddy+Baby combo just isn't enough to cover everything. Tie the knot here.
@@ -116,7 +116,7 @@ There is an exception. For layout-specific styles (that propogate throughout you
 
 This grid system _employs the use of typographic scales_. And it is highly recommended that you follow this for readability. You can read up about the subject [here](http://lamb.cc/typograph/).
 
-Karma.gs gives you two very useful helpers for maintaining the correct scale and rhthym.
+Karma.gs gives you two very useful helpers for maintaining the correct scale and rhythm.
 
 #### Scale
 
@@ -133,7 +133,7 @@ Text size should be consistent and with a certain pattern. First you'll need to 
 
 It is important to use this to scale type within your main content. Not only does it generate the correct font-size according to the typographic scale you chose, it also chooses the correct line-height according to your `lineHeight` option, which will preserve a consistent Rhythm. More on the Rhythm below.
 
-#### Rhthym
+#### Rhythm
 
 The reason why we write better (and more legibly) on pieces of refill as opposed to plain paper, is because the horizontal lines give us rhythm. When we write headers, we make sure that the text is centered between a set amount of lines. This Rhythm is also important in web type, and can greatly enhance legibility when preserved.
 
