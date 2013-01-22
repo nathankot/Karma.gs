@@ -33,11 +33,11 @@ Semantic, fully customizable grid system that employs the Goldilocks Approach. H
 
 The grid is totally configurable. Configuration parameters as follows:
 
-**_goldilocks** : This is the line length that maximizes readability. And the entire grid will be based upon this. 'Desktop' view will be twice this size, 'Tablet' view will be equal to this size.
-**_goldilocks_padding** : This dictates the padding that goes around your content when the viewport is too small.
-**_grid_columns** : The number of grid columns that you want to work with. I suggest keeping it at `6` because it doesn't really matter, more on that below.
-**_gutter_width** : The gutter you want between your grid columsn.
-**_grid_expand_min_proportion** : This determines whether your columns will fully expand or retain their size when they break and are pushed down. If set to `0` (default,) all columns will expand fully. If for example this is set to `.5`, only columns that are larger than _half the container size_ will fully expand.
+- **_goldilocks** : This is the line length that maximizes readability. And the entire grid will be based upon this. 'Desktop' view will be twice this size, 'Tablet' view will be equal to this size.
+- **_goldilocks_padding** : This dictates the padding that goes around your content when the viewport is too small.
+- **_grid_columns** : The number of grid columns that you want to work with. I suggest keeping it at `6` because it doesn't really matter, more on that below.
+- **_gutter_width** : The gutter you want between your grid columsn.
+- **_grid_expand_min_proportion** : This determines whether your columns will fully expand or retain their size when they break and are pushed down. If set to `0` (default,) all columns will expand fully. If for example this is set to `.5`, only columns that are larger than _half the container size_ will fully expand.
 
 #### Using
 
