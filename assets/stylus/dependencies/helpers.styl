@@ -1,0 +1,135 @@
+/**
+ * Helper for assigning a particular typographic scale to the calling class.
+ * Based upon http://lamb.cc/typograph/
+ */
+scale_type(position)
+	position = sequence_center + position
+	font_size = (typographicScale[position])em
+	lines_req = ceil(font_size / lineHeight)
+	font-size font_size
+	line-height (lines_req * (lineHeight / font_size))
+
+
+/**
+ * Helper to create margin bottoms as a multiple of line height, and does not break the rhythm.
+ */
+line_breaks(n = 1)
+	if @font-size
+		if baseSize is a 'px'
+			(baseSize*lineHeight*n)px
+		if baseSize is a 'em'
+			(baseSize*lineHeight*n)em
+		if baseSize is a '%'
+			(baseSize/100*lineHeight*n)em
+
+/**
+ * Helper for creating a image using background image, with a SVG path and a fallback path.
+ * Requires Modernizer for .no-svg and .svg detection
+ */
+svg_background(uri, alt-uri, scale = 1)
+
+	size = image-size(alt-uri)
+	width = size[0] * scale
+	height = size[1] * scale
+	aspect = width / height
+
+	font-size 1em // when working with font sizes we need to make sure we are using the default size
+
+	.no-js &
+	.no-svg &
+		background url(alt-uri) 0 0 no-repeat
+		width width
+		height height
+		background-size(@width @height)
+
+	.lt-ie9 &
+		background none
+		filter s("progid:DXImageTransform.Microsoft.AlphaImageLoader(src=%s, sizingMethod='scale');", alt-uri)
+		-ms-filter "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=%s, sizingMethod='scale')" % alt-uri
+
+	.svg &
+		width (width / 16)em
+		height (height / 16)em
+		background-image url(uri)
+		background-size(100% 100%)
+
+/**
+ * Helper for using creating an image using background image, takes a normal image path.
+ * This works with the Rails asset pipeline if is_rails = true
+ */
+image_background(path_tuple, relative_path = false, scale = 1)
+
+	if length(path_tuple) == 2
+		path = join('.', path_tuple)
+		sep_path = true
+	else
+		path = path_tuple
+		sep_path = false
+
+	if typeof(relative_path) is 'unit'
+		scale = relative_path
+		relative_path = false
+
+	if is_rails
+		paths = image_path(path)
+		path = paths[0]
+		relative_path = paths[1] if relative_path == false
+
+	relative_path = path if relative_path == false
+
+	size = image-size(relative_path)
+	width (size[0]*scale)
+	height (size[1]*scale)
+
+	if scale != 1
+		background-size 100% 100%
+
+	background-image url(path)
+
+	@media retina
+		if generate_retina_image_alternatives && sep_path
+			path = path_tuple[0] + '@2x.' + path_tuple[1]
+			if is_rails
+				path = image_path(path)[0]
+			&
+				background-image url(path)
+
+/**
+ * Helper for floating a list in the center. Requires three class names, the wrapper, the list , and list items
+ */
+float_center(one, two, three)
+	@extends .clearfix
+	{one}
+		@extends .clearfix
+		position relative
+		float right
+		left -50%
+		text-align left
+
+		{two}
+			@extends .clearfix
+			position relative
+			left 50%
+
+			{three}
+				position relative
+				float left
+
+/**
+ * Helper for creating a sticky footer,
+ */
+sticky_footer(wrapper, push, footer, footer_height)
+	&, body
+		height 100%
+
+	{wrapper}
+		min-height 100%
+		height auto!important
+		height 100%
+		margin 0 auto -(footer_height)
+
+	{footer},
+	{push}
+		height abs(footer_height)
+
+
