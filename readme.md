@@ -18,18 +18,18 @@ Semantic, fully customizable grid system that employs the Goldilocks Approach. H
 
 ### Folder Structure
 
-- **assets/stylus/stylehsset.styl** : This is the file that you _compile_. It imports all other necessary files. *If you create a new file*, you must import it in this file for changes to take effect.
+- **assets/stylus/stylesheet.styl** : This is the file that you _compile_. It imports all other necessary files. *If you create a new file*, you must import it in this file for changes to take effect.
 - **assets/stylus/config.styl** : This is where you start, take a look and make adjustments suitable to your app. Some of the key configurations will be detailed below.
 - **assets/stylus/dependencies/** : Generally you don't need to touch this folder, it includes the cogs that make Karma.gs work.
 - **assets/stylus/classes/** : These are **extendible** classes such as `.clearfix`. Much like abstract classes in OOP, they must only be extended by your styles via `@extends`
 - **assets/stylus/layout** : These styles control the layouting (spacing between objects.) It has a `baby.styl`, `mummy.styl`, and `daddy.styl`. More on that later.
-- **assets/stylus/components** : Components are reusasble pieces of styles that form a tangile and severable component within the view. Put them in here.
+- **assets/stylus/components** : Components are reuseable pieces of styles that form a tangible and severable component within the view. Put them in here.
 - **assets/stylus/modules** : Modules are non-reusable styles related to a specific page or purpose. The styles that it applies need not be contained within an element and can be broad.
 - **assets/stylus/vendor** : You can place external styles, dependencies here.
 
 ### The Grid
 
-### Configuring
+#### Configuring
 
 The grid is totally configurable. Configuration parameters as follows:
 
@@ -39,7 +39,7 @@ The grid is totally configurable. Configuration parameters as follows:
 **_gutter_width** : The gutter you want between your grid columsn.
 **_grid_expand_min_proportion** : This determines whether your columns will fully expand or retain their size when they break and are pushed down. If set to `0` (default,) all columns will expand fully. If for example this is set to `.5`, only columns that are larger than _half the container size_ will fully expand.
 
-### Using
+#### Using
 
 This is a *semantic grid system*. Which means you don't need to add classes to your markup to make it work.
 
@@ -79,7 +79,7 @@ Stylus:
 
 #### Lots of Media Queries!
 
-It is highly reccommended that you **don't keep your media queries in one place**. What!?! Well, for maintainability and readability, you should keep your media queries where it is _most relevant_.
+It is highly recommended that you **don't keep your media queries in one place**. What!?! Well, for maintainability and readability, you should keep your media queries where it is _most relevant_.
 
 If you think having too many queries is a bad idea, [check this out](http://css-tricks.com/lark-queries/).
 
@@ -105,7 +105,7 @@ The variables `baby`, `mummy`, `daddy` and `daddyOnly` are automatically generat
 
 #### The Exception
 
-There is an exception. For layout-specific styles (that propogate throughout your app), it's reccommended to keep them in `assets/layouts/[baby|mummy|daddy|global].styl`. It is important to distinguish between them:
+There is an exception. For layout-specific styles (that propogate throughout your app), it's recommended to keep them in `assets/layouts/[baby|mummy|daddy|global].styl`. It is important to distinguish between them:
 
 - **global** : Global layout styles _don't need to be adjusted for different viewports_.
 - **baby**   : Put your default (yet adjustable) layout styles here, remember, with mobile first, these are the styles that will be shown to legacy browsers.
@@ -114,7 +114,7 @@ There is an exception. For layout-specific styles (that propogate throughout you
 
 ### Typographic Scale & Rhythm
 
-This grid system _employs the use of typographic scales_. And it is highly reccommended that you follow this for readability. You can read up about the subject [here](http://lamb.cc/typograph/).
+This grid system _employs the use of typographic scales_. And it is highly recommended that you follow this for readability. You can read up about the subject [here](http://lamb.cc/typograph/).
 
 Karma.gs gives you two very useful helpers for maintaining the correct scale and rhthym.
 
@@ -122,10 +122,10 @@ Karma.gs gives you two very useful helpers for maintaining the correct scale and
 
 Text size should be consistent and with a certain pattern. First you'll need to configure the scale that you want to use in `config.styl`. These are the relevant configuration options:
 
-**baseSize** : This is the base font-size you want to use. You can either specify it as a percentage (of client default font-size) or as a pixel. Currently, both ways have advantages and disadvantages. Using a percentage is more 'adaptive', however the `line_breaks()` details below is more prone to breaking as it assumes a default size of `16px`. _Please let me know if you find a solution_.
-**\*_sequence** : I've included a variety of common typographic sequences. You can define your own sequence, just make sure that they all contain the same amount of levels so that changes are easier down the road.
-**sequence_center** : What should be the center of the sequence? I.E what is the default body text size? This should be set to the index of the sequence that is `1em`
-**typographicScale** : Assign your chosen sequence to this variable.
+- **baseSize** : This is the base font-size you want to use. You can either specify it as a percentage (of client default font-size) or as a pixel. Currently, both ways have advantages and disadvantages. Using a percentage is more 'adaptive', however the `line_breaks()` details below is more prone to breaking as it assumes a default size of `16px`. _Please let me know if you find a solution_.
+- **\*_sequence** : I've included a variety of common typographic sequences. You can define your own sequence, just make sure that they all contain the same amount of levels so that changes are easier down the road.
+- **sequence_center** : What should be the center of the sequence? I.E what is the default body text size? This should be set to the index of the sequence that is `1em`
+- **typographicScale** : Assign your chosen sequence to this variable.
 
 `scale_type(pos)` is the helper you need for typographic scaling. It takes a `position` argument. `0` being the default font size. `1` being one level larger, up the sequence. `-1` being one level smaller, down the sequence. And so on...
 
