@@ -8,7 +8,7 @@ Semantic, fully customizable grid system that employs the Goldilocks Approach. H
 
 - This grid is written in [Stylus](http://learnboost.github.com/stylus/). And that's the language you would be working with. It is very powerful, and many of its features can't be implemented through other pre-processors (I believe.)
 
-- You will need to know how to _compile_ or _pre-process_ the Stylus. I recommend using [Codekit](http://incident57.com/codekit/). Or use [this gem](https://github.com/lucasmazza/ruby-stylus) and the Asset Pipeline for integrating with Rails.
+- You will need to know how to _compile_ or _pre-process_ the Stylus. I recommend using [Codekit](http://incident57.com/codekit/). Or use [this gem](https://github.com/lucasmazza/ruby-stylus) and the Asset Pipeline for integrating with Rails. Or if you use Node, you'll know what to do ;)
 
 - You should be familiar with the [Goldilocks Approach](http://www.designbyfront.com/demo/goldilocks-approach/)
 
