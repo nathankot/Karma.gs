@@ -2,134 +2,209 @@
 
 ## Abstract
 
-Heavily inspired by [semantic.gs](http://semantic.gs/), and [the Goldilocks Approach](http://goldilocksapproach.com/). Be sure to check them out if you haven't before.
+Semantic, fully customizable grid system that employs the Goldilocks Approach. Heavily inspired by [semantic.gs](http://semantic.gs/), and [the Goldilocks Approach](http://goldilocksapproach.com/).
 
 ## Requirements
 
-You will need to be using [Stylus](http://learnboost.github.com/stylus/). If you haven't heard of it, Stylus is a _very_ powerful css preprocessor (like LESS or SASS). A lot of the features in Karma.gs can't be implemented in the other preprocessors.
+- This grid is written in [Stylus](http://learnboost.github.com/stylus/). And that's the language you would be working with. It is very powerful, and many of its features can't be implemented through other pre-processors (I believe.)
 
-- [Stylus](http://learnboost.github.com/stylus/)
+- You will need to know how to _compile_ or _pre-process_ the Stylus. I recommend using [Codekit](http://incident57.com/codekit/). Or use [this gem](https://github.com/lucasmazza/ruby-stylus) and the Asset Pipeline for integrating with Rails.
 
-## Features
+- You should be familiar with the [Goldilocks Approach](http://www.designbyfront.com/demo/goldilocks-approach/)
 
-- Written in stylus.
-- Semantic grid, no more flurries of `.span{x}`.
-- **Infinitely divisible** grid system.
-- Conforms to the Goldilocks Approach.
-- Very customizable, choose your own 'goldilocks' width.
-- [Font awesome](http://fortawesome.github.com/Font-Awesome/) icons library ported for stylus.
-- An assortment of default components for you to use.
-- Pretty decent folder structure to get you started.
-- Color scheme generator.
+- You will need to adopt a Mobile-first design approach.
 
-## Documentation
+## Overview
 
-### Using the grid
+### Folder Structure
 
-#### Conventional Way
+- **assets/stylus/stylehsset.styl** : This is the file that you _compile_. It imports all other necessary files. *If you create a new file*, you must import it in this file for changes to take effect.
+- **assets/stylus/config.styl** : This is where you start, take a look and make adjustments suitable to your app. Some of the key configurations will be detailed below.
+- **assets/stylus/dependencies/** : Generally you don't need to touch this folder, it includes the cogs that make Karma.gs work.
+- **assets/stylus/classes/** : These are **extendible** classes such as `.clearfix`. Much like abstract classes in OOP, they must only be extended by your styles via `@extends`
+- **assets/stylus/layout** : These styles control the layouting (spacing between objects.) It has a `baby.styl`, `mummy.styl`, and `daddy.styl`. More on that later.
+- **assets/stylus/components** : Components are reusasble pieces of styles that form a tangile and severable component within the view. Put them in here.
+- **assets/stylus/modules** : Modules are non-reusable styles related to a specific page or purpose. The styles that it applies need not be contained within an element and can be broad.
+- **assets/stylus/vendor** : You can place external styles, dependencies here.
 
-Usually using a grid means adding a whole lot of non-semantic styling nonsense in your markup.
+### The Grid
+
+### Configuring
+
+The grid is totally configurable. Configuration parameters as follows:
+
+**_goldilocks** : This is the line length that maximizes readability. And the entire grid will be based upon this. 'Desktop' view will be twice this size, 'Tablet' view will be equal to this size.
+**_goldilocks_padding** : This dictates the padding that goes around your content when the viewport is too small.
+**_grid_columns** : The number of grid columns that you want to work with. I suggest keeping it at `6` because it doesn't really matter, more on that below.
+**_gutter_width** : The gutter you want between your grid columsn.
+**_grid_expand_min_proportion** : This determines whether your columns will fully expand or retain their size when they break and are pushed down. If set to `0` (default,) all columns will expand fully. If for example this is set to `.5`, only columns that are larger than _half the container size_ will fully expand.
+
+### Using
+
+This is a *semantic grid system*. Which means you don't need to add classes to your markup to make it work.
+
+#### Example: 2-column grid
+
+Markup:
 
 ```html
-<div class="row profile">
-	<div class="span4"></div>
-	<aside class="span2"></aside>
+<div class="container">
+	<article class="news-item">
+		<section class="content">
+			<p>Article content.</p>
+		</section>
+		<aside class="related">
+			<ul>
+				<li>Related 1</li>
+				<li>Related 2</li>
+				<li>Related 3</li>
+			</ul>
+		</section>
+	</article>
 </div>
 ```
 
-#### Semantic way
-
-With a semantic grid system, this nonsense is moved to your stylesheet where it belongs.
+Stylus:
 
 ```stylus
-.profile
+.news-item
 	row()
-	div
+	.content
 		columns(4)
-	aside
+	.related
 		columns(2)
 ```
 
+### Responsivity
+
+#### Lots of Media Queries!
+
+It is highly reccommended that you **don't keep your media queries in one place**. What!?! Well, for maintainability and readability, you should keep your media queries where it is _most relevant_.
+
+If you think having too many queries is a bad idea, [check this out](http://css-tricks.com/lark-queries/).
+
+_But writing media queries over and over again?!? No way!_
+
+You don't have to. Take a look at this example, and see what Stylus can do for you ;)
+
+```stylus
+.heading
+	/* We define the size we want for small screens first, mobile-first remember? */
+	font-size 1.5em
+
+	/* And then we decide how big we want it for the biggest screen. */
+	@media daddy
+		font-size 4em
+
+	/* Finally we decide for medium sized screens, just to tie the knot. */
+	@media mummy
+		font-size 3.2em
+```
+
+The variables `baby`, `mummy`, `daddy` and `daddyOnly` are automatically generated for you to use as media queries.
+
+#### The Exception
+
+There is an exception. For layout-specific styles (that propogate throughout your app), it's reccommended to keep them in `assets/layouts/[baby|mummy|daddy|global].styl`. It is important to distinguish between them:
+
+- **global** : Global layout styles _don't need to be adjusted for different viewports_.
+- **baby**   : Put your default (yet adjustable) layout styles here, remember, with mobile first, these are the styles that will be shown to legacy browsers.
+- **daddy**  : After you've got your baby styles sussed, adjust them for the big-screen here.
+- **mummy**  : Sometimes the Daddy+Baby combo just isn't enough to cover everything. Tie the knot here.
+
+### Typographic Scale & Rhythm
+
+This grid system _employs the use of typographic scales_. And it is highly reccommended that you follow this for readability. You can read up about the subject [here](http://lamb.cc/typograph/).
+
+Karma.gs gives you two very useful helpers for maintaining the correct scale and rhthym.
+
+#### Scale
+
+Text size should be consistent and with a certain pattern. First you'll need to configure the scale that you want to use in `config.styl`. These are the relevant configuration options:
+
+**baseSize** : This is the base font-size you want to use. You can either specify it as a percentage (of client default font-size) or as a pixel. Currently, both ways have advantages and disadvantages. Using a percentage is more 'adaptive', however the `line_breaks()` details below is more prone to breaking as it assumes a default size of `16px`. _Please let me know if you find a solution_.
+**\*_sequence** : I've included a variety of common typographic sequences. You can define your own sequence, just make sure that they all contain the same amount of levels so that changes are easier down the road.
+**sequence_center** : What should be the center of the sequence? I.E what is the default body text size? This should be set to the index of the sequence that is `1em`
+**typographicScale** : Assign your chosen sequence to this variable.
+
+`scale_type(pos)` is the helper you need for typographic scaling. It takes a `position` argument. `0` being the default font size. `1` being one level larger, up the sequence. `-1` being one level smaller, down the sequence. And so on...
+
+- **scale_type(pos)** : Scales the font-size and line height to conform to the given typographic position.
+
+It is important to use this to scale type within your main content. Not only does it generate the correct font-size according to the typographic scale you chose, it also chooses the correct line-height according to your `lineHeight` option, which will preserve a consistent Rhythm. More on the Rhythm below.
+
+#### Rhthym
+
+The reason why we write better (and more legibly) on pieces of refill as opposed to plain paper, is because the horizontal lines give us rhythm. When we write headers, we make sure that the text is centered between a set amount of lines. This Rhythm is also important in web type, and can greatly enhance legibility when preserved.
+
+`scale_type()` shown above helps you with rhythm. However sometimes you may simply want to know 'how many pixels tall is 3 lines?'. `line_breaks(n)` will answer that. You'll find yourself primarily using it for margin-bottom's.
+
+- **line_breaks(n)** : Returns the height of **n** lines in *pixels*.
+
+### Other Features
+
+#### Integrating with Rails
+
+In `config.styl` you'll find a `is_rails` setting. Change this to `true`. This will enable `image_path(basename)` which will return something like `<%= image_path({base_name}) %>`.
+
+This will also modify the helper `image_background(path_tuple, relative_path = false, scale = 1)` to use the asset pipeline.
+
+#### Retina Images
+
+You can `turn_on_retina_image_alternatives` in `config.styl` to true. And the `image_background()` will automatically create a `@2x` rule for retina-displays only (by using `@media retina`).
+
+### Float-center
+
+You can use `float_center()` to create a centered float (useful for menus.).
+
+- **float_center(one, two, three)** : `three` selector for items. It will require two wrappers — `one` and `two`.
+
+For example:
+
+```stylus
+.example
+	float_center('.centered', 'ul', 'li')
+```
+
 ```html
-<div class="profile">
-	<div></div>
-	<aside></aside>
+<div class="example">
+	<nav class="centered">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</nav>
 </div>
 ```
 
-#### Infinite Division
+### Sticky Footer
 
-Karma.gs lets you divide your grid infinitely. Which means although you are inclined towards using whole numbers, you are not restricted to it. Useful for those times when you're making a page extra special (or something).
+Sticky footers become easy to create with the helper `sticky_footer(wrapper, push, footer, footer_height)`.
 
-```stylus
-.profile
-	row()
-	div
-		columns(3.555)
-	aside
-		columns(2.445)
-```
-
-### Extra options
-
-#### columns()
-
-`columns()` can take _3_ arguments. `columns(span, expand_full, ignore_media)`. Here's a breakdown of the additional two options:
-
-- *expand_full* : Defaults to `false`. If set to `true`, the grid element is forced to be resized to `width: 100%;` when the browser is shrinked to 'baby' (more on that later).
-
-- *ignore_media* : Defaults to `false`. If set to `true`, the grid element will _only_ use a percentage width, and _will not be affected by a change in screen size_. This is a useful option when you're using a grid within a grid.
-
-#### offset()
-
-Use `offset(number)` to, well, offset the grid element...
-
-#### pull-right()
-
-Pull to the right.
-
-### Using the Goldilocks Approach
-
-#### Intro
-
-The goldilocks approach basically means that your page should cater to three different sizes - _too small_, _too big_ and _just right_. It also promotes a mobile-first design methodology. This too is reflected in Karma.gs. Mobile styles _are the default_, which means that older browsers without media query support will simply be shown the mobile view of the site. It is very important that in using this grid, **you are prepared to think mobile-first**.
-
-#### Folder structure
-
-There are _four key files_ you should take note of:
-
-- `styl/layout/global.styl`: everything
-- `styl/layout/baby.styl`: the baby (Mobile)
-- `styl/layout/daddy.styl`: the daddy (Desktops)
-- `styl/layout/mummy.styl`: the mummy (Tablets)
-
-You should work through the files in this order:
-
-1. Global: define things that will be present no matter the view port.
-2. Baby: create a mobile view of the site
-3. Daddy: extend the mobile view with changes that applied to desktops
-4. Mummy: further extend the daddy view with changes that are applied to a smaller tablet
-
-You should make use of `modules` and `components`. The adaptability of these elements should be contained within their own file, _not in the files above_. For example a `styl/modules/blog.styl` module might look like this:
+By example:
 
 ```stylus
-.blog
-	/* Global styles */
-	padding 6px
-	/* Baby styles */
-	margin 0
-	@media daddy
-		/* Daddy styles */
-		margin 12px
-	@media mummy
-		/* Mummy Styles */
-		margin 6px
+html
+	sticky_footer('.wrapper', '.foot-stool', '.footer', 250px)
 ```
 
-### Generating a color scheme
+```html
+<html>
+	<head></head>
+	<body>
+		<div class="wrapper">
+			<div class="foot-stool"></div>
+		</div>
+		<div class="footer"></div>
+	</body>
+</html>
+```
 
-Check out `styl/config.styl` for an assortment of configurations. It comes with the functionality to generate a 2-color complmentary color scheme if you give it a `baseColor`.
+## Full Documentation
+
+Full documentation will be written once the project matures.
 
 ## Contribution
 
-This is a young project. You are more than welcome, encouraged, to contribute. And any feedback would be greatly appreciated.
+You are more than welcome to contribute.

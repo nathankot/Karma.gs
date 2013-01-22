@@ -14,13 +14,12 @@ scale_type(position)
  * Helper to create margin bottoms as a multiple of line height, and does not break the rhythm.
  */
 line_breaks(n = 1)
-	if @font-size
-		if baseSize is a 'px'
-			(baseSize*lineHeight*n)px
-		if baseSize is a 'em'
-			(baseSize*lineHeight*n)em
-		if baseSize is a '%'
-			(baseSize/100*lineHeight*n)em
+	if unit(baseSize) == 'px'
+		return (baseSize*lineHeight*n)px
+	if unit(baseSize) == 'em'
+		return (baseSize*lineHeight*n*16)px
+	if unit(baseSize) == '%'
+		return (baseSize/100*lineHeight*n*16)px
 
 /**
  * Helper for creating a image using background image, with a SVG path and a fallback path.

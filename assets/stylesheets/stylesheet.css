@@ -177,10 +177,10 @@ textarea {
 }
 .divisor {
   position: relative;
-  margin-top: ;
-  margin-bottom: ;
-  padding-top: ;
-  padding-bottom: ;
+  margin-top: 25.6px;
+  margin-bottom: 25.6px;
+  padding-top: 25.6px;
+  padding-bottom: 25.6px;
 }
 .clearfix,
 form label,
@@ -838,14 +838,14 @@ body {
 }
 h1,
 h2 {
-  margin-bottom: ;
+  margin-bottom: 25.6px;
 }
 h3,
 h4 {
-  margin-bottom: ;
+  margin-bottom: 12.8px;
 }
 hgroup {
-  margin-bottom: ;
+  margin-bottom: 51.2px;
 }
 hgroup h1,
 hgroup h2,
@@ -858,7 +858,7 @@ ul,
 ol,
 dl,
 blockquote {
-  margin-bottom: ;
+  margin-bottom: 25.6px;
   max-width: 30em;
 }
 a,
@@ -875,7 +875,7 @@ a:focus {
 header,
 section,
 article {
-  margin-bottom: ;
+  margin-bottom: 25.6px;
 }
 .container {
   padding: 0 0.809em 0 0.809em;
@@ -901,7 +901,7 @@ article {
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%;
+  font-size: 16px;
   font-weight: 300;
   line-height: 1.6;
   color: #393d46;
