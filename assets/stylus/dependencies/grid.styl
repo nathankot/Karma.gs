@@ -2,7 +2,6 @@
 You've stumbled upon Karma.gs's core
 grid engine :)
 ====================================== */
-
 _get_column_width(size_multiple = 1)
 	( (_goldilocks * size_multiple) - (_grid_columns - 1) * _gutter_width ) / (_grid_columns)
 
@@ -28,7 +27,7 @@ row(columns = _grid_columns)
 	@media mummy
 		_generate_row()
 
-columns(span = 1, expand_full = false, ignore_media = false)
+columns(span = 1, expand_full = nil, ignore_media = false)
 
 	float left
 	margin-right 0
@@ -43,7 +42,9 @@ columns(span = 1, expand_full = false, ignore_media = false)
 		columns(span, false, true)
 	else
 
-		if expand_full == false && span <= (_grid_columns * _grid_expand_min_proportion)
+		if expand_full == nil && span <= (_grid_columns * _grid_expand_min_proportion)
+			width round(((span / _grid_columns)*100)%)
+		if expand_full == false
 			width round(((span / _grid_columns)*100)%)
 		else
 			width 100%
