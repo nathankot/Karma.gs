@@ -145,6 +145,8 @@ The reason why we write better (and more legibly) on pieces of refill as opposed
 
 #### Integrating with Rails
 
+Use the [Stylus Gem](https://github.com/lucasmazza/ruby-stylus) and the provided application.css.erb.styl.
+
 In `config.styl` you'll find a `is_rails` setting. Change this to `true`. This will enable `image_path(basename)` which will return something like `<%= image_path({base_name}) %>`.
 
 This will also modify the helper `image_background(path_tuple, relative_path = false, scale = 1)` to use the asset pipeline.
