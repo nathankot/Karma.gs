@@ -4,6 +4,8 @@
 
 Semantic, fully customizable grid system that employs the Goldilocks Approach. Heavily inspired by [semantic.gs](http://semantic.gs/), and [the Goldilocks Approach](http://goldilocksapproach.com/).
 
+This is still a work in progress. I use Karma.gs heavily for personal stuff, but haven't had much time to clean this repo up. If you need any help with setup feel free to let me know :)
+
 ## Requirements
 
 - This grid is written in [Stylus](http://learnboost.github.com/stylus/). And that's the language you would be working with. It is very powerful, and many of its features can't be implemented through other pre-processors (I believe.)
