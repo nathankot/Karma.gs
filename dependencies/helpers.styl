@@ -5,7 +5,10 @@
 scale_type(position)
 	position = sequence_center + position
 	font_size = (typographicScale[position])em
-	lines_req = ceil(font_size / lineHeight)
+	proportion_size = font_size / lineHeight
+	lines_req = ceil(proportion_size)
+	if proportion_size > .9 && proportion_size < 1
+		lines_req = lines_req + 1
 	font-size font_size
 	line-height (lines_req * (lineHeight / font_size))
 
