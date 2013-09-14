@@ -1,5 +1,7 @@
 # Karma.gs Grid System
 
+### An opinionated Stylus Grid System for savvy frontend developers.
+
 ## Abstract
 
 Semantic, fully customizable grid system that employs the Goldilocks Approach. Heavily inspired by [semantic.gs](http://semantic.gs/), and [the Goldilocks Approach](http://goldilocksapproach.com/).

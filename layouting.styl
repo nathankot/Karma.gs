@@ -1,0 +1,116 @@
+/*
+Column Helpers, these MUST be called before a columns() call.
+
+Example use:
+
+    .profile
+      expand_for(size)
+      columns(3)
+
+*/
+expand_for(size)
+  -kgs-expand-for size
+
+ignore_media_queries()
+  -kgs-ignore-media 1
+
+always_expand()
+  -kgs-always-expand 1
+
+/*
+Define a container. All rows must go inside one of these.
+*/
+container()
+  padding 0 _goldilocks_padding 0 _goldilocks_padding
+  max-width _goldilocks
+  margin auto
+
+  @media daddy
+    padding 0 (_goldilocks_padding*2)em 0 (_goldilocks_padding*2)em
+    margin 0 auto
+    max-width (_goldilocks*2)em
+
+  @media mummy
+    .container
+      width _goldilocks
+
+/*
+Define a Row.
+Columns must come inside this.
+When nested a row inside a column, pass the column size in.
+*/
+row(columns = _grid_columns)
+  @extends .clearfix
+  display block
+  width 100%
+  padding 0
+  margin 0
+  @media daddy
+    _generate_row(2, columns)
+  @media mummy
+    _generate_row(1, _grid_columns) if @-kgs-expand-for == 'mummy'
+    _generate_row(1, columns) if @-kgs-expand-for != 'mummy'
+
+/*
+Define a column. Pass in the column size.
+*/
+columns(span = 1)
+  float left
+  margin-right 0 unless @margin-right == 0
+  padding-left 0 unless @padding-left == 0
+  padding-right 0 unless @padding-right == 0
+
+  -kgs-always-expand 1 if @-kgs-expand-for is defined
+
+  if @-kgs-always-expand != 1 && span <= (_grid_columns * _grid_expand_min_proportion)
+    width round(((span / _grid_columns)*100)%)
+  else
+    width 100%
+
+  unless @-kgs-ignore-media == 1
+    &
+
+      @media daddy
+        _generate_column(span, 2)
+
+      @media mummy
+        // I can explain... well.. no..
+        // but doesn't work any other way...
+        margin-left 0 if @-kgs-expand-for == 'mummy'
+        box-sizing border-box if @-kgs-expand-for == 'mummy'
+        padding-left _gutter_width if @-kgs-expand-for == 'mummy'
+        width 100% if @-kgs-expand-for == 'mummy'
+        _generate_column(span) unless @-kgs-expand-for == 'mummy'
+
+/*
+Offset column from the left.
+*/
+offset(span = 1)
+  @media daddy
+    margin-left (_get_span_width(span, 2) + _gutter_width * 2)!important
+  @media mummy
+    margin-left (_get_span_width(span) + _gutter_width * 2)!important
+
+/*
+Pull column to the right.
+*/
+pull_right()
+  float right
+
+/*
+Private
+ */
+_get_column_width(size_multiple = 1)
+  ( (_goldilocks * size_multiple) - (_grid_columns - 1) * _gutter_width ) / (_grid_columns)
+
+_get_span_width(columns, size_multiple = 1)
+  columns * _get_column_width(size_multiple) + (columns - 1) * _gutter_width
+
+_generate_row(size_multiple = 1, columns = _grid_columns)
+  width (_get_span_width(columns, size_multiple) + _gutter_width)
+  margin-left (_gutter_width * -1)
+
+_generate_column(size, size_multiple = 1)
+  width _get_span_width(size, size_multiple)
+  margin-left _gutter_width
+/***/

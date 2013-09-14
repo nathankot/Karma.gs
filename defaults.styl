@@ -1,0 +1,75 @@
+/**
+ * All configurations should be kept in this file.
+ */
+
+/*
+Infrastructure
+====================================== */
+is_rails = true
+generate_retina_image_alternatives = true
+
+/*
+Grid
+====================================== */
+_goldilocks                 = _gl = 30em
+_goldilocks_padding         = _gp = 0.809em
+_grid_columns               = _gc = 6
+_gutter_width               = _gw = 1.2em 
+
+/* 
+If a column is below this % size then it 
+won't expand to full on small screen sizes */
+_grid_expand_min_proportion = .2 
+
+/*
+Global Size switch
+
+This changes the font size which in 
+turn adjusts the grid size.
+====================================== */
+baseSize                     = _bs = 125%
+
+/*
+Media Queries
+
+To use these e.g:
+
+    @media daddy
+      font-size 2em
+    @media mummy
+      font-size 1em
+
+No need to tweak these as they are 
+calculated from the variables above.
+====================================== */
+baby           = s("screen and (max-width: %s)", ((_gl + 4*_gp) * _bs/100))
+mummy          = s("screen and (min-width: %s) and (max-width: %s)", ((_gl + 4*_gp) * _bs/100), ((_gl*2 + 4*_gp) * _bs/100))
+daddy          = s("screen and (min-width: %s)", ((_gl + 4*_gp) * _bs/100))
+daddyOnly      = s("screen and (min-width: %s)", ((_gl*2 + 4*_gp) * _bs/100))
+retina         = "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)"
+webkit         = "screen and(-webkit-min-device-pixel-ratio:0)"
+ipad_portrait  = "all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)"
+ipad_landscape = "all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape)"
+
+/*
+Typographic scales
+
+You can define your own typographic 
+scale here. 
+====================================== */
+_sequence_fibonacci   = 0.6154 0.6154 0.6154 0.6154 1 1.6154 2.6154 3.6154 3.6154 3.6154
+_sequence_traditional = 0.666 0.75 0.8333 0.9167 1 1.1667 1.333 1.5 1.75 2 3 4 5 6
+_sequence_lecobusier  = 0.6154 0.6154 0.6154 0.8077 1 1.3077 1.6154 2.1154 2.615 3.4231
+_sequence_center      = 4
+
+/*
+Type
+====================================== */
+lineHeight                   = 1.6em /* Specify this in em's */
+typographicScale             = _sequence_traditional
+titleFontFamily              = "futura-pt", Futura, "Century Gothic", sans-serif
+impactFontFamily             = "futura-pt", Helvetica, Arial, sans-serif
+headingFontFamily            = "proxima-nova", 'Helvetica Neue', Helvetica, Arial, sans-serif
+paragraphFontFamily          = "proxima-nova", 'Helvetica Neue', Helvetica, Arial, sans-serif
+inputFontFamily              = paragraphFontFamily
+monoFontFamily               = monospace
