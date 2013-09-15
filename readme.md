@@ -22,25 +22,18 @@ _Karma does not include a reset: you can choose your favorite one_.
 
 ## Who should use it?
 
-You should use Karma if you enjoy creating your own components (buttons,
-forms, inputs etc.) and just want a **minimal but powerful** grid system to
-kick you off.
+You should use Karma if:
 
-You should use Karma if you are interested in trying the Goldilocks Approach
-to responsive design (and you won't regret it!)
-
-You should use Karma if you are sick of bloated front-end frameworks and you
-want to take control of how your project looks.
-
-You should use Karma if you understand and care about typographic rhythm and scale.
-
-You should use Karma if you're sick of seeing seeing stuff like `col-lg-4` in 
-your markup.
-
-You should use Karma if your sick of maintaining separate files for media
-queries.
-
-You should use Karma if you want to use Stylus.
+- You enjoy creating your own components (buttons, forms, inputs etc.) and 
+  just want a **minimal but powerful** grid system to kick you off.
+- You are interested in trying the Goldilocks Approach to responsive 
+  design (and you won't regret it!)
+- You are sick of bloated front-end frameworks and you want to take 
+  control of how your project looks.
+- You understand and care about typographic rhythm and scale.
+- You're sick of seeing seeing stuff like `col-lg-4` in your markup.
+- You're sick of maintaining separate files for media queries.
+- You want to use Stylus.
 
 ## Two Grids
 
