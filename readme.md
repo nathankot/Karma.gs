@@ -173,11 +173,8 @@ add the mummy rule:
     scale_type(0)
 ```
 
-Isn't it awesome how all of the relevant response rules are encapsulated in
-the same class? No more messing around with multiple files.
-
-The reason why we add the mummy rule last, is because the daddy rule can be
-enough in most cases.
+Isn't it awesome how *all of the relevant response rules are encapsulated in
+the same class*? No more messing around with multiple files.
 
 ## How to use
 
@@ -197,6 +194,10 @@ individually:
 @import "karma/layouting" // Layouting Grid System
 @import "karma/typography" // Typography Grid System
 ```
+
+## Contribution
+
+It would please me very much if you are interested enough to contribute :)
 
 ## License
 
