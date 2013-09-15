@@ -4,13 +4,12 @@ Basic helpers that everyone needs
 Use like this:
     
     .element
-      clearfix()
+      @extends .clearfix
 
-It will actually _extend_ the clearfix
-class, rather than duplicating it.
+This will save you a couple of bytes.
 ====================================== */
 
-.clearfix
+clearfix()
   *zoom:1
   &:before,
   &:after
@@ -18,27 +17,20 @@ class, rather than duplicating it.
     display:table
   &:after
     clear:both
+.clearfix
+  clearfix()
 
-clearfix()
-  @extends .clearfix
-
-
-.ir
+hide-text()
   font unquote('0/0 a')
   color transparent
   text-shadow none
   background-color transparent
   border 0
-
-image-replacement()
-  @extends .ir
-hide-text()
-  @extends .ir
-
-
-.hidden
-  display none!important
-  visibility hidden
+.ir
+  hide-text()
 
 hidden()
-  @extends .hidden
+  display none!important
+  visibility hidden
+.hidden
+  hidden()
