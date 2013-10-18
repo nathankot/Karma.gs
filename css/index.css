@@ -170,8 +170,8 @@ select {
   visibility: hidden;
 }
 h1 {
-  font-size: 1.75em;
-  line-height: 1.8285714285714287em;
+  font-size: 2em;
+  line-height: 1.6em;
 }
 html,
 body {
