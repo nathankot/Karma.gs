@@ -169,27 +169,26 @@ select {
   display: none !important;
   visibility: hidden;
 }
+h1 {
+  font-size: 1.75em;
+  line-height: 1.8285714285714287em;
+}
 html,
 body {
   height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 section {
-  padding: 0 0.809em 0 0.809em;
-  max-width: 30em;
-  margin: auto;
   display: block;
   position: relative;
   height: 100%;
 }
-@media screen and (min-width: 41.545em) {
-  section {
-    padding: 0 1.618em em 0 1.618em em;
-    margin: 0 auto;
-    max-width: 60em;
-  }
+section.short-description {
+  background-color: #00a894;
 }
-@media screen and (min-width: 41.545em) and (max-width: 79.045em) {
-  section {
-    width: 30em;
-  }
+section.short-description h1 {
+  float: left;
+  color: #fff;
+  width: 20em;
+  margin: 3em;
 }
