@@ -173,11 +173,6 @@ html,
 body {
   height: 100%;
 }
-#home {
-  width: 400px;
-  height: 400px;
-  background-color: #000;
-}
 section {
   padding: 0 0.809em 0 0.809em;
   max-width: 30em;
