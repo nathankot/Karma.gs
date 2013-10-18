@@ -11,177 +11,186 @@
 
   </head>
   <body>
-    <section class="short-description"><!-- Short Description -->
-      <hgroup>
-      <h1>Karma.gs <br>
-        A <strong>fucking</strong> simple grid system.</h1>
-      </hgroup>
-    </section>
-      
-    <section><!-- Goldilocks -->
-      <h2>Goldilocks Approach</h2>
+    <div class="content">
+      <section class="short-description"><!-- Short Description -->
+        <hgroup>
+        <h1>Karma.gs <br>
+          A <strong>fucking</strong> simple grid system.</h1>
+        </hgroup>
+      </section>
+        
+      <section><!-- Goldilocks -->
+        <h2>Goldilocks Approach</h2>
 
-      Karma uses the Goldilocks Approach. This is a very organic approach to
-      thinking about responsive websites, it puts aside the battle to
-      accommodate every possible screen size, and lets you create something
-      that is truly flexible and will work with just about any screen size.
-      Approach.
-    </section>
+        Karma uses the Goldilocks Approach. This is a very organic approach to
+        thinking about responsive websites, it puts aside the battle to
+        accommodate every possible screen size, and lets you create something
+        that is truly flexible and will work with just about any screen size.
+        Approach.
+      </section>
 
-    <section><!-- Typographic Scale -->
-      <h2>Typographic Scale</h2>
+      <section><!-- Typographic Scale -->
+        <h2>Typographic Scale</h2>
 
 
-    </section>
+      </section>
 
-    <section><!-- Examples -->
+      <section><!-- Examples -->
 
-      <p>Just your basic grid system:</p>
+        <p>Just your basic grid system:</p>
 
-      <pre><code class=" stylus">.main
-        container()
+        <pre><code class=" stylus">.main
+          container()
 
-      .info-section
-        row()
+        .info-section
+          row()
 
-      .about
-        columns(4)
+        .about
+          columns(4)
 
-      .contact
-        columns(2)
-      </code></pre>
+        .contact
+          columns(2)
+        </code></pre>
 
-      <p>But you can use decimals!</p>
+        <p>But you can use decimals!</p>
 
-      <pre><code class=" stylus">.about
-        columns(2.333)
-      .contact
-        columns(3.666)
-      </code></pre>
+        <pre><code class=" stylus">.about
+          columns(2.333)
+        .contact
+          columns(3.666)
+        </code></pre>
 
-      <p>Offsets and pulls:</p>
+        <p>Offsets and pulls:</p>
 
-      <pre><code class=" stylus">.about
-        offset(1)
-        pull_right()
-        columns(1.333)
-      .contact
-        columns(3.666)
-      </code></pre>
+        <pre><code class=" stylus">.about
+          offset(1)
+          pull_right()
+          columns(1.333)
+        .contact
+          columns(3.666)
+        </code></pre>
 
-      <p>Customize responsive behaviour:</p>
+        <p>Customize responsive behaviour:</p>
 
-      <pre><code class=" stylus">.about
-        always_expand() // Ignore **_grid_expand_min_proportion** setting
-        columns(1)
-      .contact
-        columns(5)
-      </code></pre>
+        <pre><code class=" stylus">.about
+          always_expand() // Ignore **_grid_expand_min_proportion** setting
+          columns(1)
+        .contact
+          columns(5)
+        </code></pre>
 
-      <pre><code class=" stylus">.about
-        ignore_media_queries() // Just generate a % width
-        columns(1)
-      .contact
-        ignore_media_queries()
-        columns(5)
-      </code></pre>
+        <pre><code class=" stylus">.about
+          ignore_media_queries() // Just generate a % width
+          columns(1)
+        .contact
+          ignore_media_queries()
+          columns(5)
+        </code></pre>
 
-      <pre><code class=" stylus">.about
-        expand_for 'mummy' // Expand on 'mummy' size
-        columns(1)
-      .contact
-        ignore_media_queries()
-        columns(5)
-      </code></pre>
+        <pre><code class=" stylus">.about
+          expand_for 'mummy' // Expand on 'mummy' size
+          columns(1)
+        .contact
+          ignore_media_queries()
+          columns(5)
+        </code></pre>
 
-      <p>Define the scale you want to use by overriding the defaults in
-      <code>defaults.styl</code>:</p>
+        <p>Define the scale you want to use by overriding the defaults in
+        <code>defaults.styl</code>:</p>
 
-      <pre><code class=" stylus">typographicScale = _sequence_traditional
-      </code></pre>
+        <pre><code class=" stylus">typographicScale = _sequence_traditional
+        </code></pre>
 
-      <p>To use a particular size:</p>
+        <p>To use a particular size:</p>
 
-      <pre><code class=" stylus">.about
-        scale_type 2
-      .contact
-        scale_type -1
-      </code></pre>
+        <pre><code class=" stylus">.about
+          scale_type 2
+        .contact
+          scale_type -1
+        </code></pre>
 
-      <p>To maintain rhythm while spacing two blocks:</p>
+        <p>To maintain rhythm while spacing two blocks:</p>
 
-      <pre><code class=" stylus">.info-section
-        margin-bottom line_breaks(2)
-      </code></pre>
+        <pre><code class=" stylus">.info-section
+          margin-bottom line_breaks(2)
+        </code></pre>
 
-      <h3 id="composingviamobilefirst">Composing via mobile-first</h3>
+        <h3 id="composingviamobilefirst">Composing via mobile-first</h3>
 
-      <p>You should read <a href="http://goldilocksapproach.com/">the Goldilocks Approach</a> before proceeding.</p>
+        <p>You should read <a href="http://goldilocksapproach.com/">the Goldilocks Approach</a> before proceeding.</p>
 
-      <p>Karma comes with these core media query helpers:</p>
+        <p>Karma comes with these core media query helpers:</p>
 
-      <ul>
-      <li><code>@media daddy</code></li>
-      <li><code>@media daddyOnly</code></li>
-      <li><code>@media mummy</code></li>
-      <li><code>@media baby</code></li>
-      </ul>
+        <ul>
+        <li><code>@media daddy</code></li>
+        <li><code>@media daddyOnly</code></li>
+        <li><code>@media mummy</code></li>
+        <li><code>@media baby</code></li>
+        </ul>
 
-      <p>Say you want to make a button have different font sizes according to the
-      screen size. First create the button defaulting to mobile:</p>
+        <p>Say you want to make a button have different font sizes according to the
+        screen size. First create the button defaulting to mobile:</p>
 
-      <pre><code class=" stylus">.button
-        scale_type(-1)
-      </code></pre>
+        <pre><code class=" stylus">.button
+          scale_type(-1)
+        </code></pre>
 
-      <p>And then add the rule for how it would look on large screens (e.g desktop):</p>
+        <p>And then add the rule for how it would look on large screens (e.g desktop):</p>
 
-      <pre><code class=" stylus">.button
-        scale_type(-1)
+        <pre><code class=" stylus">.button
+          scale_type(-1)
 
-        @media daddy
-          scale_type(2)
-      </code></pre>
+          @media daddy
+            scale_type(2)
+        </code></pre>
 
-      <p>Finally if it should look different on medium screen sizes (e.g iPad), then
-      add the mummy rule:</p>
+        <p>Finally if it should look different on medium screen sizes (e.g iPad), then
+        add the mummy rule:</p>
 
-      <pre><code class=" stylus">.button
-        scale_type(-1)
+        <pre><code class=" stylus">.button
+          scale_type(-1)
 
-        @media daddy
-          scale_type(2)
+          @media daddy
+            scale_type(2)
 
-        @media mummy
-          scale_type(0)
-      </code></pre>
+          @media mummy
+            scale_type(0)
+        </code></pre>
 
-      <p>Isn't it awesome how <em>all of the relevant response rules are encapsulated in
-      the same class</em>? No more messing around with multiple files.</p>
+        <p>Isn't it awesome how <em>all of the relevant response rules are encapsulated in
+        the same class</em>? No more messing around with multiple files.</p>
 
-      <h2 id="howtouse">How to use</h2>
+        <h2 id="howtouse">How to use</h2>
 
-      <p>You can install this with bower:</p>
+        <p>You can install this with bower:</p>
 
-      <pre><code class=" sh">bower install karma
-      </code></pre>
+        <pre><code class=" sh">bower install karma
+        </code></pre>
 
-      <p>Or simply download and put the files somewhere. And then import these files
-      individually:</p>
+        <p>Or simply download and put the files somewhere. And then import these files
+        individually:</p>
 
-      <pre><code class=" stylus">@import "karma/defaults"
-      @import "karma/utilities"
-      @import "config" // YOUR OWN config file, these can override the defaults.
-      @import "karma/layouting" // Layouting Grid System
-      @import "karma/typography" // Typography Grid System
-      </code></pre>
+        <pre><code class=" stylus">@import "karma/defaults"
+        @import "karma/utilities"
+        @import "config" // YOUR OWN config file, these can override the defaults.
+        @import "karma/layouting" // Layouting Grid System
+        @import "karma/typography" // Typography Grid System
+        </code></pre>
 
-    </section>
+      </section>
+    </div>
 
     <div class="grid-background">
-      <div class="baby"></div>
-      <div class="mummy"></div>
       <div class="daddy"></div>
+      <div class="mummy"></div>
+      <div class="baby"></div>
+    </div>
+
+    <div class="grid-sections">
+      <section id="one"></section>
+      <section id="two"></section>
+      <section id="three"></section>
+      <section id="four"></section>
     </div>
   </body>
 </html>

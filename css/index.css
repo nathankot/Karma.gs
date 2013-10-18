@@ -177,18 +177,63 @@ html,
 body {
   height: 100%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+body {
+  background-color: #ff7000;
+}
+.content,
+.grid {
+  height: 100%;
+  width: 100%;
+}
+.content {
+  position: absolute;
+  z-index: 3;
 }
 section {
   display: block;
   position: relative;
   height: 100%;
 }
-section.short-description {
-  background-color: #00a894;
-}
-section.short-description h1 {
+section h1 {
   float: left;
-  color: #fff;
   width: 20em;
   margin: 3em;
+}
+section#one {
+  background-color: #00a894;
+}
+section#two {
+  background-color: #8502ff;
+}
+section#three {
+  background-color: #0290ff;
+}
+section#four {
+  background-color: #ff7000;
+}
+/* GRIDZ */
+.grid-background {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.grid-background > div {
+  position: absolute;
+  height: 100%;
+  background-color: rgba(255,255,255,0.2);
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.grid-background .baby {
+  width: 30em;
+}
+.grid-background .daddy {
+  width: 60em;
+}
+.grid-sections {
+  height: 100%;
+  z-index: 1;
 }
