@@ -1,0 +1,16 @@
+{
+  "name": "Karma.gs",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathankot/Karma.gs.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "gitHead": "4bdfbcc0eea98c9df8fd9ffd6e347672db220131"
+}
