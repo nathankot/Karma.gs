@@ -1,3 +1,7 @@
 name: Your New Jekyll Site
 markdown: redcarpet
 pygments: true
+
+stylus:
+  compress: false
+  path: ./stylus
