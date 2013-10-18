@@ -1,0 +1,29 @@
+/**
+ * Helper for assigning a particular typographic scale to the calling class.
+ * Based upon http://lamb.cc/typograph/
+ */
+scale_type(position)
+  position = _sequence_center + position
+  font_size = (typographicScale[position])em
+  proportion_size = font_size / lineHeight
+  lines_req = ceil(proportion_size)
+  if proportion_size > .9 && proportion_size < 1
+    lines_req = lines_req + 1
+  font-size font_size
+  line-height (lines_req * (lineHeight / font_size))
+
+
+/**
+ * Helper to create margin bottoms as a multiple of line height, and does not break the rhythm.
+ *
+ * @TODO : line_breaks() makes the assumption that 1em = 16px by default on 
+ * all browsers which is untrue, will have to improve this.
+ */
+line_breaks(n = 1)
+  if unit(baseSize) == 'px'
+    return (baseSize*lineHeight*n)px
+  if unit(baseSize) == 'em'
+    return (baseSize*lineHeight*n*16)px
+  if unit(baseSize) == '%'
+    return (baseSize/100*lineHeight*n*16)px
+

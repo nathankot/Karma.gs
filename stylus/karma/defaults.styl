@@ -1,0 +1,63 @@
+/**
+ * All configurations should be kept in this file.
+ */
+
+/*
+Grid
+====================================== */
+_goldilocks                 = 30em
+_goldilocks_padding         = 0.809em
+_grid_columns               = 6
+_gutter_width               = 1.2em 
+
+/* 
+If a column is below this % size then it 
+won't expand to full on small screen sizes */
+_grid_expand_min_proportion = .2 
+
+/*
+Global Size switch
+
+This changes the font size which in 
+turn adjusts the grid size.
+====================================== */
+baseSize = 125%
+
+/*
+Media Queries
+
+To use these e.g:
+
+    @media daddy
+      font-size 2em
+    @media mummy
+      font-size 1em
+
+No need to tweak these as they are 
+calculated from the variables above.
+====================================== */
+baby           = s("screen and (max-width: %s)", ((_goldilocks + 4*_goldilocks_padding) * baseSize/100))
+mummy          = s("screen and (min-width: %s) and (max-width: %s)", ((_goldilocks + 4*_goldilocks_padding) * baseSize/100), ((_goldilocks*2 + 4*_goldilocks_padding) * baseSize/100))
+daddy          = s("screen and (min-width: %s)", ((_goldilocks + 4*_goldilocks_padding) * baseSize/100))
+daddyOnly      = s("screen and (min-width: %s)", ((_goldilocks*2 + 4*_goldilocks_padding) * baseSize/100))
+retina         = "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)"
+webkit         = "screen and(-webkit-min-device-pixel-ratio:0)"
+ipad_portrait  = "all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)"
+ipad_landscape = "all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape)"
+
+/*
+Typographic scales
+
+You can define your own typographic 
+scale here. 
+====================================== */
+_sequence_fibonacci   = 0.6154 0.6154 0.6154 0.6154 1 1.6154 2.6154 3.6154 3.6154 3.6154
+_sequence_traditional = 0.666 0.75 0.8333 0.9167 1 1.1667 1.333 1.5 1.75 2 3 4 5 6
+_sequence_lecobusier  = 0.6154 0.6154 0.6154 0.8077 1 1.3077 1.6154 2.1154 2.615 3.4231
+_sequence_center      = 4
+
+/*
+Type
+====================================== */
+lineHeight                   = 1.6em /* Specify this in em's */
+typographicScale             = _sequence_traditional
