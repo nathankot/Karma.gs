@@ -20,7 +20,7 @@
   display: none !important;
   visibility: hidden;
 }
-#home {
+section {
   width: 400px;
   height: 400px;
   background-color: #000;
