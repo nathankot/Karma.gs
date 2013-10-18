@@ -1,3 +1,16 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+
+Stylus-ized by 
+dale tan
+http://www.whatthedale.com
+@HellaTan
+
+*/
 html,
 body,
 div,
@@ -112,11 +125,13 @@ a {
   padding: 0;
   vertical-align: baseline;
 }
+/* change colours to suit your needs */
 ins {
   background-color: #ff9;
   color: #000;
   text-decoration: none;
 }
+/* change colours to suit your needs */
 mark {
   background-color: #ff9;
   color: #000;
@@ -135,6 +150,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* change border colour to suit your needs */
 hr {
   border: 0;
   border-top: 1px solid #ccc;
@@ -146,55 +162,4 @@ hr {
 input,
 select {
   vertical-align: middle;
-}
-.clearfix {
-  *zoom: 1;
-}
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-.ir {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
-}
-.hidden {
-  display: none !important;
-  visibility: hidden;
-}
-html,
-body {
-  height: 100%;
-}
-#home {
-  width: 400px;
-  height: 400px;
-  background-color: #000;
-}
-section {
-  padding: 0 0.809em 0 0.809em;
-  max-width: 30em;
-  margin: auto;
-  display: block;
-  position: relative;
-  height: 100%;
-}
-@media screen and (min-width: 41.545em) {
-  section {
-    padding: 0 1.618em em 0 1.618em em;
-    margin: 0 auto;
-    max-width: 60em;
-  }
-}
-@media screen and (min-width: 41.545em) and (max-width: 79.045em) {
-  section {
-    width: 30em;
-  }
 }

@@ -1,9 +1,20 @@
-@import 'utilities.styl'
+@import 'reset'
+@import 'utilities'
 @import 'defaults'
 @import 'layouting'
 @import 'typography'
+
+html
+body
+  height 100%
 
 #home
   width 400px
   height 400px
   background-color black
+
+section
+  container()
+  display block
+  position relative
+  height 100%
