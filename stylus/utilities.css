@@ -1,0 +1,32 @@
+/*
+Basic helpers that everyone needs
+
+Use like this:
+    
+    .element
+      @extends .clearfix
+
+This will save you a couple of bytes.
+====================================== */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.ir {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
