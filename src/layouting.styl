@@ -1,13 +1,3 @@
-/*
-Column Helpers, these MUST be called before a columns() call.
-
-Example use:
-
-    .profile
-      expand_for(size)
-      columns(3)
-
-*/
 expand_for(size)
   -kgs-expand-for size
 
@@ -17,9 +7,6 @@ ignore_media_queries()
 always_expand()
   -kgs-always-expand 1
 
-/*
-Define a container. All rows must go inside one of these.
-*/
 container()
   padding 0 _goldilocks_padding 0 _goldilocks_padding
   max-width _goldilocks
@@ -33,11 +20,6 @@ container()
   @media mummy
     width _goldilocks
 
-/*
-Define a Row.
-Columns must come inside this.
-When nested a row inside a column, pass the column size in.
-*/
 row(columns = _grid_columns)
   clearfix()
   display block
@@ -50,9 +32,6 @@ row(columns = _grid_columns)
     _generate_row(1, _grid_columns) if @-kgs-expand-for == 'mummy'
     _generate_row(1, columns) if @-kgs-expand-for != 'mummy'
 
-/*
-Define a column. Pass in the column size.
-*/
 columns(span = 1)
   float left
   margin-right 0 unless @margin-right == 0
@@ -81,24 +60,15 @@ columns(span = 1)
         width 100% if @-kgs-expand-for == 'mummy'
         _generate_column(span) unless @-kgs-expand-for == 'mummy'
 
-/*
-Offset column from the left.
-*/
 offset(span = 1)
   @media daddy
     margin-left (_get_span_width(span, 2) + _gutter_width * 2)!important
   @media mummy
     margin-left (_get_span_width(span) + _gutter_width * 2)!important
 
-/*
-Pull column to the right.
-*/
 pull_right()
   float right
 
-/*
-Private
- */
 _get_column_width(size_multiple = 1)
   ( (_goldilocks * size_multiple) - (_grid_columns - 1) * _gutter_width ) / (_grid_columns)
 
@@ -112,4 +82,3 @@ _generate_row(size_multiple = 1, columns = _grid_columns)
 _generate_column(size, size_multiple = 1)
   width _get_span_width(size, size_multiple)
   margin-left _gutter_width
-/***/
