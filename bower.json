@@ -5,7 +5,7 @@
     "Nathan Kot <me@nathankot.com>"
   ],
   "description": "A Stylus grid system for savvy developers.",
-  "main": "grid.styl",
+  "main": "karma.styl",
   "keywords": [
     "grid",
     "system",
