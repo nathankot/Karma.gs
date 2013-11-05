@@ -6,10 +6,10 @@ _grid_expand_min_proportion ?= .2
 
 _base_size ?= 125%
 
-baby ?= s("screen and (max-width: %s)", (_goldilocks + 4*_goldilocks_padding))
-mummy ?= s("screen and (min-width: %s) and (max-width: %s)", (_goldilocks + 4*_goldilocks_padding), (_goldilocks*2 + 4*_goldilocks_padding))
-daddy ?= s("screen and (min-width: %s)", (_goldilocks + 4*_goldilocks_padding))
-daddyOnly ?= s("screen and (min-width: %s)", (_goldilocks*2 + 4*_goldilocks_padding))
+baby ?= s("screen and (max-width: %s)", ((_goldilocks + 4*_goldilocks_padding) * _base_size/100))
+mummy ?= s("screen and (min-width: %s) and (max-width: %s)", ((_goldilocks + 4*_goldilocks_padding) * _base_size/100), ((_goldilocks*2 + 4*_goldilocks_padding) * _base_size/100))
+daddy ?= s("screen and (min-width: %s)", ((_goldilocks + 4*_goldilocks_padding) * _base_size/100))
+daddyOnly ?= s("screen and (min-width: %s)", ((_goldilocks*2 + 4*_goldilocks_padding) * _base_size/100))
 retina ?= "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)"
 webkit ?= "screen and(-webkit-min-device-pixel-ratio:0)"
 ipad_portrait ?= "all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)"
@@ -20,7 +20,7 @@ _sequence_traditional ?= 0.666 0.75 0.8333 0.9167 1 1.1667 1.333 1.5 1.75 2 3 4 
 _sequence_lecobusier ?= 0.6154 0.6154 0.6154 0.8077 1 1.3077 1.6154 2.1154 2.615 3.4231
 _sequence_center ?= 4
 
-_line_height ?= 1.6em /* Specify this in em's */
+_line_height ?= 1.6
 _typographic_scale ?= _sequence_traditional
 
 clearfix()
@@ -131,19 +131,24 @@ _generate_column(size, size_multiple = 1)
 
 scale_type(position)
   position = _sequence_center + position
-  font_size = (_typographic_scale[position])em
-  proportion_size = font_size / _line_height
-  lines_req = ceil(proportion_size)
-  if proportion_size > .9 && proportion_size < 1
+  font_size = (_typographic_scale[position])rem
+  line_height = unit(_line_height, '')
+
+  lines_req = font_size / line_height
+  if lines_req > .9 && lines_req < 1
     lines_req = lines_req + 1
-  font-size font_size
-  line-height (lines_req * (_line_height / font_size))
+  lines_req = ceil(lines_req)
+
+  font-size unit(font_size, 'em')
+  font-size unit(font_size, 'rem')
+  line-height (lines_req * _line_height)rem
 
 line_breaks(n = 1)
-  if unit(_base_size) == 'px'
-    return (_base_size*_line_height*n)px
-  if unit(_base_size) == 'em'
-    return (_base_size*_line_height*n*16)px
-  if unit(_base_size) == '%'
-    return (_base_size/100*_line_height*n*16)px
+  return (_line_height*n)rem
 
+
+html
+  font-size _base_size
+
+html, body
+  line-height _line_height

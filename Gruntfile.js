@@ -9,7 +9,8 @@ module.exports = function(grunt) {
           'src/defaults.styl', 
           'src/utilities.styl', 
           'src/layouting.styl', 
-          'src/typography.styl'
+          'src/typography.styl',
+          'src/reset.styl'
         ],
         dest: 'dist/karma.styl'
       }
