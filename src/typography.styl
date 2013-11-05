@@ -4,19 +4,19 @@
 
 scale_type(position)
   position = _sequence_center + position
-  font_size = (typographicScale[position])em
-  proportion_size = font_size / lineHeight
+  font_size = (_typographic_scale[position])em
+  proportion_size = font_size / _line_height
   lines_req = ceil(proportion_size)
   if proportion_size > .9 && proportion_size < 1
     lines_req = lines_req + 1
   font-size font_size
-  line-height (lines_req * (lineHeight / font_size))
+  line-height (lines_req * (_line_height / font_size))
 
 line_breaks(n = 1)
-  if unit(baseSize) == 'px'
-    return (baseSize*lineHeight*n)px
-  if unit(baseSize) == 'em'
-    return (baseSize*lineHeight*n*16)px
-  if unit(baseSize) == '%'
-    return (baseSize/100*lineHeight*n*16)px
+  if unit(_base_size) == 'px'
+    return (_base_size*_line_height*n)px
+  if unit(_base_size) == 'em'
+    return (_base_size*_line_height*n*16)px
+  if unit(_base_size) == '%'
+    return (_base_size/100*_line_height*n*16)px
 
