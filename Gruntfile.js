@@ -13,13 +13,21 @@ module.exports = function(grunt) {
         ],
         dest: 'dist/karma.styl'
       }
+    },
+    copy: {
+      dist: {
+        files: {
+          'dist/stubs.styl': 'src/stubs.styl'
+        }
+      }
     }
   });
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task(s).
-  grunt.registerTask('default', ['concat']);
+  grunt.registerTask('default', ['concat', 'copy']);
 
 };

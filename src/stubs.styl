@@ -1,0 +1,202 @@
+min-height(height)
+  min-height: height
+  height:auto !important
+  height: height
+
+display()
+  display arguments
+  ie7-inline-block() if arguments[0] == 'inline-block'
+
+font-smoothing()
+  font-smoothing arguments
+  -webkit-font-smoothing arguments
+
+border-radius()
+  -webkit-border-radius: arguments
+  -moz-border-radius: arguments
+  border-radius: arguments
+
+box-shadow()
+  -webkit-box-shadow: arguments
+  -moz-box-shadow: arguments
+  box-shadow: arguments
+
+animation-name()
+  -webkit-animation-name: arguments
+  -moz-animation-name: arguments
+  -ms-animation-name: arguments
+  -o-animation-name: arguments
+  animation-name: arguments
+
+animation-duration()
+  -webkit-animation-duration: arguments
+  -moz-animation-duration: arguments
+  -ms-animation-duration: arguments
+  -o-animation-duration: arguments
+  animation-duration: arguments
+
+animation-timing-function()
+  -webkit-animation-timing-function: arguments
+  -moz-animation-timing-function: arguments
+  -ms-animation-timing-function: arguments
+  -o-animation-timing-function: arguments
+  animation-timing-function: arguments
+
+animation-iteration-count()
+  -webkit-animation-iteration-count: arguments
+  -moz-animation-iteration-count: arguments
+  -ms-animation-iteration-count: arguments
+  -o-animation-iteration-count: arguments
+  animation-iteration-count: arguments
+
+animation-direction()
+  -webkit-animation-direction: arguments
+  -moz-animation-direction: arguments
+  -ms-animation-direction: arguments
+  -o-animation-direction: arguments
+  animation-direction: arguments
+
+animation-delay()
+  -webkit-animation-delay: arguments
+  -moz-animation-delay: arguments
+  -ms-animation-delay: arguments
+  -o-animation-delay: arguments
+  animation-delay: arguments
+
+transition()
+  -webkit-transition: arguments
+  -moz-transition: arguments
+  -ms-transition: arguments
+  -o-transition: arguments
+  transition: arguments
+
+transition-property()
+  -webkit-transition-property: arguments
+  -moz-transition-property: arguments
+  -ms-transition-property: arguments
+  -o-transition-property: arguments
+  transition-property: arguments
+
+transition-duration()
+  -webkit-transition-duration: arguments
+  -moz-transition-duration: arguments
+  -ms-transition-duration: arguments
+  -o-transition-duration: arguments
+  transition-duration: arguments
+
+transition-timing-function()
+  -webkit-transition-timing-function: arguments
+  -moz-transition-timing-function: arguments
+  -ms-transition-timing-function: arguments
+  -o-transition-timing-function: arguments
+  transition-timing-function: arguments
+
+rotate(degrees)
+  -webkit-transform: 'rotate(%s)' % degrees
+  -moz-transform: 'rotate(%s)' % degrees
+  -ms-transform: 'rotate(%s)' % degrees
+  -o-transform: 'rotate(%s)' % degrees
+  transform: 'rotate(%s)' % degrees
+
+scale(ratio)
+  -webkit-transform: 'scale(%s)' % ratio
+  -moz-transform: 'scale(%s)' % ratio
+  -ms-transform: 'scale(%s)' % ratio
+  -o-transform: 'scale(%s)' % ratio
+  transform: 'scale(%s)' % ratio
+
+translate(x, y)
+  -webkit-transform: 'translate(%s, %s)' % (x y)
+  -moz-transform: 'translate(%s, %s)' % (x y)
+  -ms-transform: 'translate(%s, %s)' % (x y)
+  -o-transform: 'translate(%s, %s)' % (x y)
+  transform: 'translate(%s, %s)' % (x y)
+
+skew(x, y)
+  -webkit-transform: 'skew(%s, %s)' % (x y)
+  -moz-transform: 'skew(%s, %s)' % (x y)
+  -ms-transform: 'skew(%s, %s)' % (x y)
+  -o-transform: 'skew(%s, %s)' % (x y)
+  transform: 'skew(%s, %s)' % (x y)
+
+translate3d(x, y, z)
+  -webkit-transform: 'translate(%s, %s, %s)' % (x y z)
+  -moz-transform: 'translate(%s, %s, %s)' % (x y z)
+  -ms-transform: 'translate(%s, %s, %s)' % (x y z)
+  -o-transform: 'translate(%s, %s, %s)' % (x y z)
+  transform: 'translate(%s, %s, %s)' % (x y z)
+
+transform-origin()
+  -webkit-transform-origin: arguments
+  -moz-transform-origin: arguments
+  -ms-transform-origin: arguments
+  -o-transform-origin: arguments
+  transform-origin: arguments
+
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden
+// See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
+backface-visibility(visibility)
+  -webkit-backface-visibility: visibility
+  -moz-backface-visibility: visibility
+  -ms-backface-visibility: visibility
+  backface-visibility: visibility
+
+// Heads up: FF 3.6 and under need "padding" instead of "padding-box"
+background-clip(clip)
+  -webkit-background-clip: clip
+  -moz-background-clip: clip
+  background-clip: clip
+
+background-size(size)
+  if size == unquote('cover')
+    -webkit-background-size: 100%
+    -moz-background-size: 100%
+    -o-background-size: 100%
+    background-size: 100%
+
+  -webkit-background-size: size
+  -moz-background-size: size
+  -o-background-size: size
+  background-size: size
+
+box-sizing(boxmodel)
+  -webkit-box-sizing: boxmodel
+  -moz-box-sizing: boxmodel
+  -ms-box-sizing: boxmodel
+  box-sizing: boxmodel
+  if is_rails && boxmodel == 'border-box'
+    *behavior: url("/assets/components/boxsizing/boxsizing.htc");
+
+user-select(select)
+  -webkit-user-select: select
+  -moz-user-select: select
+  -ms-user-select: select
+  -o-user-select: select
+  user-select: select
+
+resizable(direction)
+  resize: direction // Options: horizontal, vertical, both
+  overflow: auto // Safari fix
+
+content-columns(columnCount, columnGap = _gutter_width)
+  -webkit-column-count: columnCount
+  -moz-column-count: columnCount
+  column-count: columnCount
+  -webkit-column-gap: columnGap
+  -moz-column-gap: columnGap
+  column-gap: columnGap
+
+hyphens(mode = auto)
+  word-wrap: break-word
+  -webkit-hyphens: mode
+  -moz-hyphens: mode
+  -ms-hyphens: mode
+  -o-hyphens: mode
+  hyphens: mode
+
+opacity(opacity)
+  opacity: (opacity / 100)
+  filter 'alpha(opacity=%s)' % opacity
+
+
