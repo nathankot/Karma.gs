@@ -4,7 +4,7 @@ An opinionated Stylus Grid System for savvy front-end developers.
 
 ## Work-in-progress
 
-Undergoing some big changse ;)
+Undergoing some big changes ;)
 
 ## License
 
