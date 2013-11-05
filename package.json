@@ -2,11 +2,12 @@
   "name": "Karma.gs",
   "version": "0.0.7",
   "description": "Karma Grid System",
-  "main": "karma.styl",
-  "dependencies": {
-    "grunt": "~0.4.1"
+  "main": "dist/karma.styl",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
