@@ -8,17 +8,18 @@ always_expand()
   -kgs-always-expand 1
 
 container()
-  padding 0 _goldilocks_padding 0 _goldilocks_padding
-  max-width _goldilocks
+  padding 0 unit(_goldilocks_padding, 'em') 0 unit(_goldilocks_padding, 'em')
+  max-width unit(_goldilocks, 'em')
   margin auto
 
   @media daddy
-    padding 0 (_goldilocks_padding*2) 0 (_goldilocks_padding*2)
-    margin 0 auto
-    max-width (_goldilocks*2)em
+    padding 0 unit(_goldilocks_padding*2, 'em') 0 unit(_goldilocks_padding*2, 'em')
+    margin-left auto
+    margin-right auto
+    max-width unit(_goldilocks*2, 'em')
 
   @media mummy
-    width _goldilocks
+    width unit(_goldilocks, 'em')
 
 row(columns = _grid_columns)
   clearfix()
