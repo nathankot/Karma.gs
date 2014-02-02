@@ -23,23 +23,6 @@ _sequence_center ?= 4
 _line_height ?= 1.6
 _typographic_scale ?= _sequence_traditional
 
-clearfix()
-  *zoom:1
-  &:before,
-  &:after
-    content:""
-    display:table
-  &:after
-    clear:both
-.clearfix
-  clearfix()
-
-hidden()
-  display none!important
-  visibility hidden
-.hidden
-  hidden()
-
 expand_for(size)
   -kgs-expand-for size
 
@@ -126,6 +109,27 @@ _generate_column(size, size_multiple = 1)
   width _get_span_width(size, size_multiple)
   margin-left _gutter_width
 
+rotate(degrees)
+  transform 'rotate(%s)' % degrees
+
+scale(ratio)
+  transform 'scale(%s)' % ratio
+
+translate(x, y)
+  transform 'translate(%s, %s)' % (x y)
+
+skew(x, y)
+  transform 'skew(%s, %s)' % (x y)
+
+translate3d(x, y, z)
+  transform 'translate(%s, %s, %s)' % (x y z)
+
+html
+  font-size _base_size
+
+html, body
+  line-height _line_height
+
 /**
  * Based upon http://lamb.cc/typograph/
  */
@@ -147,9 +151,3 @@ scale_type(position)
 line_breaks(n = 1)
   return (_line_height*n)rem
 
-
-html
-  font-size _base_size
-
-html, body
-  line-height _line_height
