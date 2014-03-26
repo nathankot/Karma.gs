@@ -102,7 +102,8 @@ _generate_row(size_multiple = 1, columns = _grid_columns)
   margin-left (_gutter_width * -1)
 
 _generate_column(size, size_multiple = 1)
-  width _get_span_width(size, size_multiple)
+  // Fix for unpredictable rounding in some browsers
+  width (_get_span_width(size, size_multiple) - 0.01em)
   margin-left _gutter_width
 
 rotate(degrees)
