@@ -14,6 +14,37 @@ And then where you run your stylus:
 { use: [require('karma.gs')()] }
 ```
 
+## Features
+
+### Extensive use of `+cache()`
+
+Which means less code duplication. E.g clearfix:
+
+```stylus
+.body
+  k-clearfix()
+
+.main
+  k-clearfix()
+```
+
+Outputs:
+
+```css
+.body:before,
+.main:before,
+.body:after,
+.main:after {
+  content: "";
+  display: table;
+}
+
+.body:after,
+.main:after {
+  clear: both;
+}
+```
+
 ## License
 
 Copyright 2012 Nathan Kot
