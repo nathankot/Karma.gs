@@ -1,6 +1,5 @@
 {
-  "name": "Karma.gs",
-  "version": "0.1.5",
+  "name": "karma",
   "description": "Karma Grid System",
   "main": "dist/karma.styl",
   "dependencies": {},
