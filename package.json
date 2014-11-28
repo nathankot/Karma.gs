@@ -4,6 +4,8 @@
   "version": "0.3.0",
   "main": "lib/karma.js",
   "dependencies": {
+    "lodash": "^2.4.1",
+    "nib": "^1.0.4",
     "stylus": "^0.49.3"
   },
   "devDependencies": {},

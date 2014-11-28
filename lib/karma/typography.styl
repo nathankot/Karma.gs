@@ -3,8 +3,7 @@
  */
 
 scale_type(position = 0)
-  position = _sequence_center + position
-  font_size = (_typographic_scale[position])rem
+  font_size = unit(k_font_size_at_position(position), 'rem')
 
   // We work with thirds
   line_height = unit(_line_height / 2, '')
