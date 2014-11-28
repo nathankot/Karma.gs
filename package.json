@@ -1,12 +1,12 @@
 {
   "name": "karma",
   "description": "Karma Grid System",
-  "main": "dist/karma.styl",
-  "dependencies": {},
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0"
+  "version": "0.3.0",
+  "main": "lib/karma.js",
+  "dependencies": {
+    "stylus": "^0.49.3"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
