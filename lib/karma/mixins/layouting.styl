@@ -8,18 +8,19 @@ k-always-expand()
   -kgs-always-expand 1
 
 k-container()
-  padding 0 unit(_goldilocks_padding, 'em') 0 unit(_goldilocks_padding, 'em')
-  max-width unit(_goldilocks, 'em')
-  margin auto
+  +cache('k-container')
+    padding 0 unit(_goldilocks_padding, 'em') 0 unit(_goldilocks_padding, 'em')
+    max-width unit(_goldilocks, 'em')
+    margin auto
 
-  @media daddy
-    padding 0 unit(_goldilocks_padding*2, 'em') 0 unit(_goldilocks_padding*2, 'em')
-    margin-left auto
-    margin-right auto
-    max-width unit(_goldilocks*2, 'em')
+    @media daddy
+      padding 0 unit(_goldilocks_padding*2, 'em') 0 unit(_goldilocks_padding*2, 'em')
+      margin-left auto
+      margin-right auto
+      max-width unit(_goldilocks*2, 'em')
 
-  @media mummy
-    width unit(_goldilocks, 'em')
+    @media mummy
+      width unit(_goldilocks, 'em')
 
 k-row(columns = _grid_columns)
   clearfix()
