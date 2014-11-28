@@ -1,5 +1,5 @@
 {
-  "name": "karma",
+  "name": "karma.gs",
   "description": "Karma Grid System",
   "version": "0.3.0",
   "main": "lib/karma.js",
