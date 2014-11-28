@@ -1,13 +1,13 @@
-expand_for(size)
+k-expand-for(size)
   -kgs-expand-for size
 
-ignore_media_queries()
+k-ignore-media-queries()
   -kgs-ignore-media 1
 
-always_expand()
+k-always-expand()
   -kgs-always-expand 1
 
-container()
+k-container()
   padding 0 unit(_goldilocks_padding, 'em') 0 unit(_goldilocks_padding, 'em')
   max-width unit(_goldilocks, 'em')
   margin auto
@@ -21,7 +21,7 @@ container()
   @media mummy
     width unit(_goldilocks, 'em')
 
-row(columns = _grid_columns)
+k-row(columns = _grid_columns)
   clearfix()
   display block
   width 100%
@@ -33,7 +33,7 @@ row(columns = _grid_columns)
     _generate_row(1, _grid_columns) if @-kgs-expand-for == 'mummy'
     _generate_row(1, columns) if @-kgs-expand-for != 'mummy'
 
-columns(span = 1)
+k-columns(span = 1)
   float left
   margin-right 0 unless @margin-right == 0
   padding-left 0 unless @padding-left == 0
@@ -61,13 +61,13 @@ columns(span = 1)
         width 100% if @-kgs-expand-for == 'mummy'
         _generate_column(span) unless @-kgs-expand-for == 'mummy'
 
-offset(span = 1)
+k-offset(span = 1)
   @media daddy
     margin-left (_get_span_width(span, 2) + _gutter_width * 2)!important
   @media mummy
     margin-left (_get_span_width(span) + _gutter_width * 2)!important
 
-pull_right()
+k-pull-right()
   float right
 
 _get_column_width(size_multiple = 1)
