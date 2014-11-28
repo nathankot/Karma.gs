@@ -2,9 +2,17 @@
 
 An opinionated Stylus Grid System for savvy front-end developers.
 
-## Work-in-progress
+## Getting Started
 
-Undergoing some big changes ;)
+```sh
+npm install karma.gs --save-dev
+```
+
+And then where you run your stylus:
+
+```js
+{ use: [require('karma.gs')()] }
+```
 
 ## License
 
@@ -21,6 +29,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
-[type]: http://lamb.cc/typograph/
-[goldilocks]: http://goldilocksapproach.com/
