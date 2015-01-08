@@ -8,17 +8,20 @@ k-always-expand()
   -kgs-always-expand 1
 
 k-container-baby()
+  box-sizing border-box
   padding 0 (_goldilocks_padding) 0 (_goldilocks_padding)
   width 100%
   margin auto
 
 k-container-daddy()
+  box-sizing border-box
   padding 0 (_goldilocks_padding * 2) 0 (_goldilocks_padding * 2)
   margin-left auto
   margin-right auto
   max-width (_goldilocks * 2 + _goldilocks_padding * 4)
 
 k-container-mummy()
+  box-sizing border-box
   width (_goldilocks + _goldilocks_padding * 4)
 
 k-container()
@@ -32,6 +35,7 @@ k-container()
 k-row(columns = _grid_columns)
   k-clearfix()
   +cache('k-row', columns, @-kgs-expand-for == 'mummy', @-kgs-ignore-media == 1)
+    box-sizing border-box
     display block
     width 100%
     padding 0
@@ -45,6 +49,7 @@ k-row(columns = _grid_columns)
 
 k-columns(span = 1)
   +cache('k-columns', span, @-kgs-expand-for is defined, @-kgs-ignore-media == 1, @-kgs-expand-for == 'mummy')
+    box-sizing border-box
     float left
     margin-right 0
     padding-left 0
