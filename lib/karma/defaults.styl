@@ -4,11 +4,11 @@ _grid_columns ?= 6
 _gutter_width ?= 1.2em
 _grid_expand_min_proportion ?= .2
 
-_base_size ?= 125%
+_base_size ?= 87.5%
 
 baby = s("screen and (max-width: %s)", (_goldilocks + 4*_goldilocks_padding))
-mummy = s("screen and (min-width: %s) and (max-width: %s)", (_goldilocks + 4*_goldilocks_padding), (_goldilocks*2 + 4*_goldilocks_padding))
-daddy = s("screen and (min-width: %s)", (_goldilocks + 4*_goldilocks_padding))
-daddyOnly = s("screen and (min-width: %s)", (_goldilocks*2 + 4*_goldilocks_padding))
+mummy = s("screen and (min-width: %s) and (max-width: %s)", (_goldilocks + 4*_goldilocks_padding + 1), (_goldilocks*2 + 4*_goldilocks_padding))
+daddy = s("screen and (min-width: %s)", (_goldilocks + 4*_goldilocks_padding + 1))
+daddyOnly = s("screen and (min-width: %s)", (_goldilocks*2 + 4*_goldilocks_padding + 1))
 
 _line_height ?= 1.6
